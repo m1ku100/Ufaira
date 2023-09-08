@@ -11,4 +11,33 @@ class FrontController extends Controller
     {
         return view('page.front.index');
     }
+
+    public function tripBromo()
+    {
+        return view('page.front.index');
+    }
+
+    public function tripIjen()
+    {
+        return view('page.front.index');
+
+    }
+
+    public function about()
+    {
+        return view('page.front.about_us');
+
+    }
+
+    public function contact()
+    {
+        return view('page.front.contact_us');
+
+    }
+
+    public function gallery()
+    {
+        return view('page.front.gallery');
+
+    }
 }

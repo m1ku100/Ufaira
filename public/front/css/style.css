@@ -2230,7 +2230,7 @@ button.play-btn i {
 .discount-action .call-banner a{margin-top: 18px;}
 
 section.cta-one {
-    background: #c81f48d9;
+    background: var(--main-color);
     padding: 50px 0;
 }
 /*action1*/

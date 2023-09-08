@@ -726,7 +726,7 @@ section.breadcrumb-outer {
     padding: 80px 0 80px;
 }
 section.breadcrumb-outer:before {
-    background: url(../images/breadcrumbbg.jpg) no-repeat;
+    background: url(../images/slider/bromo2.jpg) no-repeat;
     background-position: center;
     animation: kbrns_zoomInOut 15s linear 0s infinite alternate;
     background-size: cover;
