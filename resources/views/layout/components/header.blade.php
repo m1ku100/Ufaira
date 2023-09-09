@@ -3,7 +3,7 @@
         <div class="container">
             <div class="links links-left">
                 <ul>
-                    <li><a href="#"><i class="fa fa-phone-alt"></i>(+62)000 0000 0000</a></li>
+                    <li><a href="#"><i class="fa fa-phone-alt"></i>(+62) 822 1853 8394</a></li>
                     <li><a href="#"><i class="fa fa-envelope-open"></i> ufairatour@gmail.com</a></li>
                 </ul>
             </div>

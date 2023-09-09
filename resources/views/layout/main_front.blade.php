@@ -57,12 +57,12 @@
                 <div class="col-md-4 col-sm-12 col-xs-12">
                     <div class="footer-about">
                         <div class="footer-about-in mar-bottom-30">
-                            <h3 class="white">Need Nepayatri Help?</h3>
+                            <h3 class="white">Hubungi Kami</h3>
                             <div class="footer-phone">
                                 <div class="cont-icon"><i class="flaticon-call"></i></div>
                                 <div class="cont-content mar-left-20">
-                                    <p class="mar-0">Got Questions? Call us 24/7!</p>
-                                    <p class="bold mar-0"><span>Call Us:</span> (888) 1234 56789</p>
+                                    <p class="mar-0">Kami Menyediakan kebutuhan travel kamu!</p>
+                                    <p class="bold mar-0"><span>Telpon :</span> (+62) 822 1853 8394</p>
                                 </div>
                             </div>
                         </div>
