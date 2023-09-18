@@ -18,8 +18,7 @@
                     </li>
                     <li><a href="#" data-toggle="modal" data-target="#login"><i class="fa fa-sign-in-alt"></i> Login</a>
                     </li>
-                    <li><a href="#" data-toggle="modal" data-target="#register"><i class="fa fa-sign-out-alt"></i>
-                            Register</a></li>
+
                     <li>
                         <div class="header_sidemenu">
                             <div class="menu">
@@ -85,8 +84,8 @@
                                    role="button" aria-haspopup="true" aria-expanded="false">Pejalanan <i
                                         class="fa fa-angle-down" aria-hidden="true"></i></a>
                                 <ul class="dropdown-menu">
-                                    <li><a href="{{route('ijen')}}">Gunung Bromo</a></li>
-                                    <li><a href="flightlist.html">Kawah Ijen</a></li>
+                                    <li><a href="{{route('bromo')}}">Gunung Bromo</a></li>
+                                    <li><a href="{{route('ijen')}}">Kawah Ijen</a></li>
                                 </ul>
                             </li>
                             <li class="dropdown submenu">

@@ -6542,7 +6542,7 @@ section.ready-block {
     padding-right: 10px;
 }
 .car-detail ul.list li:before, .car-specifi ul li:before {
-    content: '\f00c';
+    /*content: '\f00c';*/
     font-family: 'fontawesome';
     padding-right: 5px;
 }

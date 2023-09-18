@@ -14,12 +14,12 @@ class FrontController extends Controller
 
     public function tripBromo()
     {
-        return view('page.front.index');
+        return view('page.front.services.bromo');
     }
 
     public function tripIjen()
     {
-        return view('page.front.index');
+        return view('page.front..services.ijen');
 
     }
 
