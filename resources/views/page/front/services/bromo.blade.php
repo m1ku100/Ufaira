@@ -208,7 +208,7 @@
                             <div class="sidebar-contact text-center">
                                 <i class=" fa fa-phone-alt"></i>
                                 <h3><span>Reservasi</span> Sekarang</h3>
-                                <a href="tel://082218538394" class="phone">+62 822 1853 8394</a>
+                                <button onclick="openWa()" class="btn btn-primary" target="_blank">Hubungi Kami</button>
                                 <small>Senin - Minggu | 08:00 - 17:00</small>
                             </div>
                         </div>
@@ -219,3 +219,23 @@
     </section>
     <!-- Destination Ends -->
 @endsection
+
+@push('js')
+    <script type="text/javascript">
+        function openWa(){
+
+            var link = `https://wa.me/6282218538394`+ `?text=Hallo Selamat Siang`;
+
+            var isSafari = navigator.vendor && navigator.vendor.indexOf('Apple') > -1 &&
+                navigator.userAgent &&
+                navigator.userAgent.indexOf('CriOS') == -1 &&
+                navigator.userAgent.indexOf('FxiOS') == -1;
+
+            if(isSafari){
+                window.location.assign(link) // Safari
+            }else{
+                window.open(link)// Chrome
+            }
+        }
+    </script>
+@endpush
