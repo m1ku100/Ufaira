@@ -23,6 +23,11 @@ class FrontController extends Controller
 
     }
 
+    public function rental()
+    {
+        return view('');
+    }
+
     public function about()
     {
         return view('page.front.about_us');

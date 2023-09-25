@@ -19,7 +19,9 @@ Route::get('/', [FrontController::class, 'index'])->name('index');
 
 Route::get('/bromo', [FrontController::class, 'tripBromo'])->name('bromo');
 
-Route::get('/kawah-ijen', [FrontController::class, 'tripIjen'])->name('ijen');
+Route::get('/bromo-ijen', [FrontController::class, 'tripIjen'])->name('ijen');
+
+Route::get('/reantal', [FrontController::class, 'rental'])->name('rental');
 
 Route::get('/galeri', [FrontController::class, 'gallery'])->name('gallery');
 

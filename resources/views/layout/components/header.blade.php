@@ -84,9 +84,12 @@
                                    role="button" aria-haspopup="true" aria-expanded="false">Pejalanan <i
                                         class="fa fa-angle-down" aria-hidden="true"></i></a>
                                 <ul class="dropdown-menu">
-                                    <li><a href="{{route('bromo')}}">Gunung Bromo</a></li>
-                                    <li><a href="{{route('ijen')}}">Kawah Ijen</a></li>
+                                    <li><a href="{{route('bromo')}}">Gunung Bromo </a></li>
+                                    <li><a href="{{route('ijen')}}">Gunung Bromo - Ijen</a></li>
                                 </ul>
+                            </li>
+                            <li class="dropdown submenu">
+                                <a href="{{route('rental')}}" class="dropdown-toggle">Rental </a>
                             </li>
                             <li class="dropdown submenu">
                                 <a href="{{route('gallery')}}" class="dropdown-toggle">Galeri </a>

@@ -27,8 +27,8 @@
             <div class="row">
                 <div id="content" class="col-md-8">
                     <div class="destination-content">
-                        <h2 class="mar-bottom-5"><a href="car-detail.html">Trip Gunung Bromo</a></h2>
-                        <h3><strong class="color-red-3">RP. 850.000</strong> / Pax (Min 5 Pax)</h3>
+                        <h2 class="mar-bottom-5"><a href="{{route('bromo')}}">Trip Gunung Bromo</a></h2>
+                        <h3><strong class="color-red-3">RP. 350.000</strong> / Pax (Min 5 Pax)</h3>
                     </div>
                     <div class="single-slider mar-bottom-30">
                         <div class="slider-1 slider-store">
@@ -65,7 +65,7 @@
                                 <div class="itinerary-item">
                                     <button type="button" class="btn btn-info" data-target="#it2"><i
                                             class="fa fa-angle-double-right" aria-hidden="true"></i></button>
-                                    <p class="mar-bottom-0"><span>2. </span> Kawasan Bromo</p>
+                                    <p class="mar-bottom-0"><span>2. </span> Kawah Bromo</p>
                                     <div id="it2" class="collapse itinerary-para">
                                         Lorem ipsum dolor sit amet, consectetur adipisicing elit,
                                         sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
@@ -100,6 +100,7 @@
                                 </div>
                             </div>
 
+
                             <!-- Pros Cons -->
                             <div class="car-specifi">
                                 <div class="row">
@@ -127,6 +128,8 @@
                                             <li><i class="fa fa-close" style="color: palevioletred"></i> Tiket masuk
                                                 wisata yang tidak dalam paket
                                             </li>
+                                            <li><i class="fa fa-close" style="color: palevioletred"></i> Biaya makan terlepas dari paket
+                                            </li>
                                         </ul>
                                     </div>
                                 </div>
@@ -149,7 +152,6 @@
                                     kondisi di area Bromo (lalu lintas, cuaca) tanpa mengganggu agenda secara
                                     keseluruhan
                                 </li>
-
                             </ul>
                         </div>
                     </div>
@@ -161,48 +163,6 @@
                 <div id="sidebar" class="col-md-4">
                     <aside class="detail-sidebar sidebar-wrapper">
 
-                        <div class="sidebar-item">
-                            <div class="detail-title">
-                                <h3>Pilihan Kendaraan</h3>
-                            </div>
-                            <div class="sidebar-content about-slider">
-                                <div class="sidebar-package">
-                                    <div class="sidebar-package-image">
-                                        <img src="{{asset('front/images/cars/zenix.png')}}" alt="Images">
-                                    </div>
-                                    <div class="destination-content mar-top-20">
-                                        <div class="destination-title">
-                                            <h4><a href="car-detail.html">Toyota Zenix</a></h4>
-                                        </div>
-
-                                    </div>
-                                </div>
-
-                                <div class="sidebar-package">
-                                    <div class="sidebar-package-image">
-                                        <img src="{{asset('front/images/cars/apv.png')}}" alt="Images">
-                                    </div>
-                                    <div class="destination-content mar-top-20">
-                                        <div class="destination-title">
-                                            <h4><a href="car-detail.html">Toyota APV</a></h4>
-                                        </div>
-
-                                    </div>
-                                </div>
-
-                                <div class="sidebar-package">
-                                    <div class="sidebar-package-image">
-                                        <img src="{{asset('front/images/cars/evalia.png')}}" alt="Images">
-                                    </div>
-                                    <div class="destination-content mar-top-20">
-                                        <div class="destination-title">
-                                            <h4><a href="car-detail.html">Nissan Evalia</a></h4>
-                                        </div>
-
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
 
                         <div class="sidebar-item sidebar-helpline">
                             <div class="sidebar-contact text-center">
