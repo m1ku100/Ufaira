@@ -3,8 +3,6 @@
     <div class="container">
         <div class="section-title">
             <h2>Kenapa Harus UFAIRA</h2>
-            <p>Lorem Ipsum is simply dummy text the printing and typesetting industry. Lorem Ipsum has been the
-                industry's standard dummy text ever since the 1500s,</p>
         </div>
         <div class="why-us-box">
             <div class="row">
