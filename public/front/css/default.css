@@ -737,6 +737,25 @@ section.breadcrumb-outer:before {
     left: 0;
     content: '';
 }
+
+section.breadcrumb-outer-rent {
+    position: relative;
+    overflow: hidden;
+    padding: 80px 0 80px;
+}
+section.breadcrumb-outer-rent:before {
+    background: url(../images/slider/jip-bromo.webp) no-repeat;
+    background-position: center;
+    animation: kbrns_zoomInOut 15s linear 0s infinite alternate;
+    background-size: cover;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    content: '';
+}
+
 .breadcrumb-content {
     position: relative;
     z-index: 1;

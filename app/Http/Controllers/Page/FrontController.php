@@ -19,13 +19,13 @@ class FrontController extends Controller
 
     public function tripIjen()
     {
-        return view('page.front..services.ijen');
+        return view('page.front.services.ijen');
 
     }
 
     public function rental()
     {
-        return view('');
+        return view('page.front.rental');
     }
 
     public function about()
