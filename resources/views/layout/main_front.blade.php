@@ -75,71 +75,28 @@
                 <h3>Login</h3>
             </div>
             <div class="login-form section-border">
-                <form>
+                @if(session()->has('message'))
+                    <p class="alert alert-danger">
+                        {{ session('message') }}
+                    </p>
+                @endif
+                <form method="post" id="form_login" action="{{route('auth.login')}}">
+                    @csrf
                     <div class="form-group">
-                        <input type="email" placeholder="Enter email address">
+                        <input type="email" name="email" placeholder="Enter email address">
                     </div>
                     <div class="form-group">
-                        <input type="password" placeholder="Enter password">
+                        <input type="password" name="password" placeholder="Enter password">
                     </div>
                 </form>
-                <div class="form-btn">
-                    <a href="#" class="biz-btn biz-btn1">LOGIN</a>
-                </div>
-                <div class="form-group form-checkbox">
-                    <input type="checkbox"> Remember Me
-                    <a href="#">Forgot password?</a>
-                </div>
-            </div>
-            <div class="login-social section-border">
-                <p>or continue with</p>
-                <a href="#" class="btn-facebook"><i class="fab fa-facebook" aria-hidden="true"></i> Facebook</a>
-                <a href="#" class="btn-twitter"><i class="fab fa-twitter" aria-hidden="true"></i> Twitter</a>
-            </div>
-            <div class="sign-up">
-                <p>Do not have an account?<a href="#">Sign Up</a></p>
-            </div>
-        </div>
-        <button type="button" class="close" data-dismiss="modal">&times;</button>
-    </div>
-</div>
 
-<div class="modal fade" id="register" role="dialog">
-    <div class="modal-dialog">
-        <div class="login-content">
-            <div class="login-title section-border">
-                <h3>Register</h3>
+                <button type="submit" class="btn btn-primary btn-submit">LOGIN</button>
+
             </div>
-            <div class="login-form section-border">
-                <form>
-                    <div class="form-group">
-                        <input type="text" placeholder="User Name">
-                    </div>
-                    <div class="form-group">
-                        <input type="text" placeholder="Full Name">
-                    </div>
-                    <div class="form-group">
-                        <input type="email" placeholder="Email">
-                    </div>
-                    <div class="form-group">
-                        <input type="password" placeholder="Password">
-                    </div>
-                </form>
-                <div class="form-btn">
-                    <a href="#" class="biz-btn biz-btn1">REGISTER</a>
-                </div>
-                <div class="form-group form-checkbox">
-                    <input type="checkbox"> Remember Me
-                    <a href="#">Forgot password?</a>
-                </div>
-            </div>
-            <div class="login-social section-border">
+            <div class="login-social section-border" style="display: none">
                 <p>or continue with</p>
                 <a href="#" class="btn-facebook"><i class="fab fa-facebook" aria-hidden="true"></i> Facebook</a>
                 <a href="#" class="btn-twitter"><i class="fab fa-twitter" aria-hidden="true"></i> Twitter</a>
-            </div>
-            <div class="sign-up">
-                <p>Do not have an account?<a href="#">Sign Up</a></p>
             </div>
         </div>
         <button type="button" class="close" data-dismiss="modal">&times;</button>
@@ -156,6 +113,17 @@
 <script src="{{asset('front/js/custom-swiper2.js')}}"></script>
 <script src="{{asset('front/js/custom-nav.js')}}"></script>
 <script src="{{asset('front/js/custom-date.js')}}"></script>
+
+<script>
+    $(function () {
+        $(".btn-submit").on("click", function (e) {
+            e.preventDefault(); // cancel default action
+
+            document.getElementById("form_login").submit(); // or $("#form_id")[0].submit();
+
+        });
+    })
+</script>
 
 @stack('js')
 
