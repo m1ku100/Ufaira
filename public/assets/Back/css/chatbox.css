@@ -1,0 +1,188 @@
+#chat-action-button {
+    position: fixed;
+    bottom: 0;
+    right: 50px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    box-shadow: 0 0 10px 1px rgba(0, 0, 0, .25);
+    font-size: 24px;
+    padding: 10px;
+    cursor: pointer;
+    z-index: +20;
+	border-radius: 20px 20px 0 0;
+	color: var(--dny-primary);
+	transition: all ease 0.2s;
+}
+
+#chat-action-button:hover {
+	color: #ffffff;
+	background-color: var(--dny-primary);
+}
+
+#chatbox-container {
+    position: fixed;
+    bottom: 20px;
+    right: 50px;
+    background-color: #fff;
+    box-shadow: 0 0 30px 2px rgba(0, 0, 0, .25);
+    height: 500px;
+    width: calc(100vw - 50px);
+	max-width: 400px;
+    overflow-y: auto;
+    display: none;
+    z-index: +20;
+	border-radius: 20px;
+}
+
+#chatbox-search-wrapper {
+	padding: 5px;
+}
+
+#chatbox-search-wrapper .input-group {
+	border: none;
+	background-color: #eeeeee;
+	border-radius: 10px;
+	overflow: hidden;
+}
+
+#chatbox-search-wrapper .form-control {
+	border: 0;
+	padding: 5px 10px;
+	background: transparent;
+}
+
+#chatbox-search-wrapper button.search {
+	color: #333;
+	border: 0;
+	padding-left: 10px;
+	padding-right: 10px;
+}
+
+#chatbox-container .list-group-item-pengguna {
+	border-radius: 0;
+	padding: 10px;
+	transition: all ease 0.15s;
+}
+
+#chatbox-container .list-group-item-pengguna:hover {
+	background: #f8c3c3;
+}
+
+#chatbox-conversation {
+    height: 100%;
+    overflow-y: auto;
+}
+
+#chatbox-container li.list-group-item-pengguna {
+    cursor: pointer;
+}
+
+#chatbox-container .chatbox-header {
+	background-color: var(--dny-primary);
+	color: #fff;
+}
+
+#chatbox-detail {
+	height: calc(500px - 50px);
+	padding-bottom: 51px;
+}
+
+#chatbox-container .list-group-contact {
+	height: calc(500px - 46px - 52px);
+	overflow-y: auto;
+}
+
+.list-group-obrolan .list-group-item {
+    border: 0;
+    padding: 5px;
+}
+
+.list-group-obrolan .sent {
+    justify-content: flex-end;
+}
+
+.list-group-item .obrolan-content {
+    max-width: 75%;
+    padding: 10px;
+    color: black;
+    line-height: 16px;
+    font-size: 13px;
+}
+
+.list-group-obrolan .sent .obrolan-content{
+    background-color: #f8c3c3;
+    border-radius: 7px 7px 0 7px;
+}
+
+.list-group-obrolan .received {
+    justify-content: flex-start;
+}
+
+.list-group-obrolan .sent .obrolan-tools {
+    margin-right: 10px;
+    color: rgba(0, 0, 0, .35);
+    cursor: pointer;
+}
+
+.list-group-obrolan .sent .obrolan-tools:hover {
+    margin-right: 10px;
+    color: rgba(0, 0, 0, .8);
+}
+
+.list-group-obrolan .received .obrolan-content {
+    background-color: #eeeeee;
+    border-radius: 7px 7px 7px 0;
+}
+
+.list-group-obrolan .tanggal-divider {
+	display: flex;
+	justify-content: center;
+}
+
+.list-group-obrolan .tanggal-divider span {
+	background: rgba(0, 0, 0, .35);
+	color: #ffffff;
+	text-align: center;
+	padding: 5px 10px;
+	border-radius: 20px;
+	font-size: 8px;
+	margin: 5px 0;
+}
+
+#chatbox-input {
+	background-color: var(--dny-primary);
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+	border-radius: 20px 20px 0 0;
+}
+
+#chatbox-input .form-chat {
+    height: 34px;
+    resize: none;
+	border: 0px;
+	border-radius: 20px;
+	background-color: rgba(255, 255, 255, 0.5);
+	font-size: 13px;
+	line-height: 20px;
+	padding: 7px 10px;
+	flex-grow: 1;
+}
+
+.btn-pilih-gambar, .btn-kirim-obrolan {
+	border: 0;
+	background-color: transparent;
+	color: #ffffff;
+	padding-left: 10px;
+	padding-right: 10px;
+}
+
+#chatbox-input .input-group-obrolan {
+	border: 1px solid var;
+}
+
+.obrolan-waktu {
+	color: rgba(0, 0, 0, .5);
+	display: block;
+	font-size: 10px;
+}

@@ -1,0 +1,208 @@
+:root {
+    --dny-primary: #77100F;
+    --dny-primary-400: #aa0000;
+    --dny-primary-light: #eb6d6d;
+    --primary: #910000;
+}
+
+.dataTables_wrapper .row:first-child,
+.dataTables_wrapper .row:last-child {
+    padding: 1em
+}
+
+.f-18 {
+    font-size: 18px;
+}
+
+.f-22 {
+    font-size: 22px;
+}
+
+.f-20 {
+    font-size: 20px;
+}
+
+.f-16 {
+    font-size: 16px;
+}
+
+.datepicker {
+    cursor: pointer;
+}
+
+@media (max-width: 1024px) {
+    .main-content {
+        padding-right: 10px;
+        padding-left: 10px;
+    }
+    .card {
+        margin-bottom: 10px;
+    }
+}
+
+.header-bottom li.nav-item.header-dropdown .nav-link {
+    color: #EEE;
+}
+
+.btn {
+    padding: 6px 12px;
+    font-size: 16px;
+    line-height: 24px;
+}
+
+.bg-danger-light {
+    background-color: rgba(252, 84, 75, 0.2) !important;
+}
+
+.bullet-notification {
+    width: 10px;
+    height: 10px;
+    border-radius: 5px;
+    display: inline-block;
+    background-color: var(--warning);
+    position: absolute;
+}
+
+.bullet-notification.t-1,
+.badge-notification.t-1 {
+    bottom: .5em;
+}
+
+.bullet-notification.t-2,
+.badge-notification.t-2 {
+    bottom: .75em;
+}
+
+.bullet-notification.r-1,
+.badge-notification.r-1 {
+    right: .5em;
+}
+
+.bullet-notification.r-2,
+.badge-notification.r-2 {
+    right: .75em;
+}
+
+.bullet-notification.r-3,
+.badge-notification.r-3 {
+    right: 1em;
+}
+
+.bullet-notification.r-4,
+.badge-notification.r-4 {
+    right: 1.25em;
+}
+
+.badge.badge-notification {
+    border-radius: 15px;
+    width: 26px;
+    height: 26px;
+    font-size: 12px;
+    font-weight: normal;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+
+/* Disable select2 */
+
+.disabled-select {
+    background-color: #d5d5d5;
+    opacity: 0.5;
+    border-radius: 3px;
+    cursor: not-allowed;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    z-index: +1;
+}
+
+.cursor-pointer {
+    cursor: pointer;
+}
+
+a.tautan:visited,
+a.tautan:link {
+    color: var(--primary);
+    text-decoration: none;
+}
+
+a.tautan:hover {
+    text-decoration: underline;
+}
+
+.custom-file-label {
+    overflow: hidden;
+}
+
+.link {
+    color: #6c757d;
+    text-decoration: none !important;
+    background-color: transparent;
+}
+
+.link:hover {
+    text-decoration: none;
+}
+
+.alert.alert-danger .list-group-item {
+    color: var(--red);
+}
+
+.select2-container--default .select2-selection--multiple .select2-selection__choice, .select2-container--default .select2-results__option[aria-selected=true], .select2-container--default .select2-results__option--highlighted[aria-selected]
+ {
+	 color: #000;
+ }
+
+ #scrollUp {
+	 height: 30px;
+	 width: 30px;
+	 font-size: 10px;
+	 line-height: 30px;
+	 right: 10px;
+ }
+
+.btn-shadow{
+	box-shadow: 3px 3px 5px grey;
+}
+
+.text-dny-primary{
+	color: #910000;
+}
+
+.btn-shadow-masuk{
+	box-shadow: 3px 3px 5px #666;
+}
+
+@media screen and (min-width: 1500px){
+	.custom-col {
+		width: 33.3%;
+	}
+}
+@media screen and (max-width: 1499px){
+	.custom-col {
+		width: 400px;
+	}
+}
+
+.btn-reservasi{
+	background-color: #910000 !important;
+	color: #EEE;
+}
+
+.btn-reservasi:before{
+	background-color: #FFE67B !important;
+	color: #333;
+}
+
+.image-reservasi{
+	border-radius: 10px;
+	width: 100%;
+	box-shadow: 3px 3px 3px #AAAAAA;
+	width: 97%;
+	margin: 0 auto;
+}

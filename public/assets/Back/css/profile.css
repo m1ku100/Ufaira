@@ -1,0 +1,335 @@
+h1, h2, h3, h4, h5, h6, *,
+p, .footer-area .footer-tittle h4 {
+	font-family: 'Montserrat';
+}
+
+#carousel-banner {
+	min-height: 100%;
+	height: calc(100vh - 100px);
+}
+
+#carousel-banner .carousel-item {
+	background-position: center;
+}
+
+@media screen and (max-width: 768px) {
+	#carousel-banner {
+		height: 500px;
+	}
+}
+
+@media screen and (max-width: 576px) {
+	#carousel-banner {
+		height: 400px;
+	}
+}
+
+.carousel-indicators .active{
+    background-color: rgba(0, 0, 0, .5);
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  height: 100px;
+  width: 100px;
+  background-size: 100%, 100%;
+  border-radius: 50%;
+  background-image: none;
+}
+
+.carousel-control-next-icon:after
+{
+  content: '>';
+  font-size: 55px;
+  color: rgba(0, 0, 0, .5);
+}
+
+.carousel-control-prev-icon:after {
+  content: '<';
+  font-size: 55px;
+  color: rgba(0, 0, 0, .5);
+}
+
+:root {
+	--dny-primary: #910000;
+	--dny-primary-400: #aa0000;
+	--dny-primary-light: #eb6d6d;
+	--primary: #910000;
+
+	--dny-new-main-color:#77100F;
+	--dny-secondary-color : #FFE67B;
+	--dny-light-button-color : #EEDBDB;
+	--dny-white-acccent-color : #EEE;
+
+}
+
+.card-produk {
+	transition: all ease-in-out 0.2s;
+}
+
+/* .card-produk:hover {
+	background-color: var(--dny-primary);
+} */
+
+/* .card-produk:hover .text-nama-produk, .card-produk:hover .text-harga {
+	color: #fff !important;
+} */
+
+.btn-tambah-keranjang {
+	background-color: var(--dny-primary);
+	color: #fff;
+	padding: 10px;
+	border: 1px solid #fff;
+	border-radius: 50px;
+}
+
+.btn-tambah-keranjang:hover {
+	box-shadow: 5px 5px 5px grey;
+	border: none;
+}
+
+.genric-btn.primary {
+	color: #fff;
+	border: 1px solid var(--dny-primary);
+	background: var(--dny-primary);
+}
+
+.genric-btn.primary:hover {
+	color: var(--dny-primary);
+	border: 1px solid var(--dny-primary);
+	background: #fff
+}
+
+#btn_header {
+	background-color: var(--dny-light-button-color);
+	color: var(--dny-new-main-color)
+}
+
+#btn_header::before {
+	background-color: var(--dny-secondary-color);
+	color: #fff;
+}
+
+.btn {
+	background-color: var(--dny-light-button-color);
+	color: var(--dny-light-button-color)
+}
+
+.btn::before {
+	background-color: var(--dny-light-button-color);
+	color: var(--dny-new-main-color);
+}
+
+.slicknav_menu .slicknav_icon-bar {
+	background-color: var(--dny-light-button-color) !important;
+}
+
+@media screen and (max-width: 576px) {
+	.login_part_form {
+		padding: 20px !important;
+	}
+}
+
+@media (max-width: 767px) {
+	.header-area .header-bottom {
+		padding: 11px 12px;
+	}
+}
+
+.header-btn {
+	padding: 18px 20px !important;
+}
+
+.header-bottom .main-menu ul li a {
+	color: var(--dny-white-acccent-color);
+}
+
+.header-bottom .main-menu ul li:hover > a {
+	color: var(--dny-secondary-color);
+}
+
+.footer-area .footer-tittle ul li a {
+	color: var(--dny-white-acccent-color);
+}
+
+.footer-area .footer-tittle ul li:hover > a {
+	color: var(--dny-secondary-color);
+}
+
+
+.badge-dny {
+    background-color: var(--dny-primary);
+    color: #fff;
+}
+
+.nav-pills .nav-link.active, .nav-pills .show>.nav-link {
+    background-color: var(--dny-secondary-color);
+}
+
+.preloader .preloader-circle {
+    border-top-color: var(--dny-primary);
+}
+
+.login_part .login_part_text {
+    /*background-image: -moz-linear-gradient(90deg, var(--dny-primary-light) 0%, var(--dny-primary) 64%, var(--dny-primary-light) 100%);*/
+    /*background-image: -webkit-linear-gradient(90deg, var(--dny-primary-light) 0%, var(--dny-primary) 64%, var(--dny-primary-light) 100%);*/
+    /*background-image: linear-gradient(90deg, var(--dny-primary-light) 0%, var(--dny-primary) 64%, var(--dny-primary-light) 100%);*/
+	background:#eedbdb;
+    background-size: 200% auto;
+}
+
+.text-dny-primary {
+    color: var(--dny-primary);
+}
+
+.text-black{
+	color: #111;
+}
+
+.btn_3 {
+    background-color: var(--dny-primary);
+	color: var(--dny-white-acccent-color);
+	border: 1px solid var(--dny-primary);
+}
+
+.btn_3:hover {
+    background-color: var(--dny-secondary-color);
+	color: var(--dny-new-main-color);
+	border: 1px solid var(--dny-primary);
+}
+
+.header-bottom .header-right .shopping-card i {
+	width: 40px;
+	height: 40px;
+	line-height: 40px;
+}
+
+.header-sticky ul li a {
+	padding: 5px 9px;
+}
+
+@media (max-width: 767px) {
+	.header-bottom .fix-card {
+		right: 50px;
+	}
+}
+
+@media screen and (max-width: 1200px) {
+	.logo-header{
+		height: 60px;
+	}
+}
+
+/* @media screen and (max-width: 1024px) {
+	.font-title-footer{
+		font-size: 12pt;
+	}
+
+	.font-info-footer{
+		font-size: 10pt;
+	}
+} */
+
+@media screen and (max-width: 992px) {
+	.logo-header{
+		height: 50px;
+	}
+
+	.font-title-footer{
+		font-size: 12pt;
+	}
+
+	.font-info-footer{
+		font-size: 10pt;
+	}
+
+	.footer-height{
+		min-height: 75px;
+	}
+
+	.font-size-icon{
+		font-size: 30px;
+	}
+
+	.hide-img {
+		display: none;
+	  }
+}
+
+@media screen and (max-width: 768px) {
+	.logo-header{
+		height: 50px;
+	}
+}
+
+@media screen and (max-width: 576px) {
+	.logo-header{
+		height: 40px;
+	}
+}
+
+@media screen and (min-width: 401px) {
+	.footer-break{
+		display: none;
+	}
+}
+
+@media screen and (min-width: 993px) {
+	.footer-height{
+		min-height: 102px;
+	}
+
+	.font-size-icon{
+		font-size: 40px;
+	}
+}
+
+@media screen and (min-width: 1201px) {
+	.logo-header{
+		height: 80px;
+	}
+}
+
+.btn-hover-kuning::before{
+	background-color:#FFE67A;
+}
+
+.btn-hover-kuning:hover{
+	background-color:#FFE67A !important;
+}
+
+.dataTables_wrapper .dataTables_paginate .paginate_button:hover{
+	background: transparent !important;
+	border: none !important;
+}
+
+.dataTables_wrapper .dataTables_paginate .paginate_button{
+	border-radius: 100% !important;
+}
+
+.page-item.active .page-link{
+	background: rgba(119, 16, 15, 1) !important;
+	border: 1px solid #77100F;
+	color: #FFF !important;
+}
+.page-item.active .page-link:hover{
+	background: #FFF !important;
+	border: 1px solid #77100F;
+	color: #77100F !important;
+}
+
+.page-link{
+	color: rgba(119, 16, 15, 1) !important;
+	border-radius: 100% !important;
+	font-size: 10pt;
+	width: 25px;
+	height: 25px;
+	align-self: center;
+	padding: 2px;
+}
+
+.paginate_button{
+	width: 35px;
+	height: 35px;
+	display: flex;
+}
