@@ -3,7 +3,7 @@
 namespace App\Policies;
 
 use App\Models\Master\Banner;
-use App\Models\User;
+use App\Models\Master\User;
 use App\Support\Privilege\Profile\PrivilegeBanner;
 use Illuminate\Auth\Access\HandlesAuthorization;
 

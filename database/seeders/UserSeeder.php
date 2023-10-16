@@ -3,7 +3,7 @@
 namespace Database\Seeders;
 
 use App\Models\Master\Role;
-use App\Models\User;
+use App\Models\Master\User;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Str;
 

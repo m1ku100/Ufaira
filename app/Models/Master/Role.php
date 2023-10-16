@@ -2,10 +2,8 @@
 
 namespace App\Models\Master;
 
-use App\Models\User;
 use App\Support\Eloquent\HasStringPrimaryKey;
 use App\Support\Utilities\Logging\HasHistoryActivities;
-use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;

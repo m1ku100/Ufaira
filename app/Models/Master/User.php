@@ -1,25 +1,21 @@
 <?php
 
-namespace App\Models;
+namespace App\Models\Master;
 
-use App\Models\Master\Menu;
-use App\Models\Master\Role;
-use App\Models\Master\RoleMenu;
+use App\Models\Exception;
 use App\Models\Transaksi\PesananPelanggan;
 use App\Support\Eloquent\CustomSoftDelete;
 use App\Support\Eloquent\HasStringPrimaryKey;
 use App\Support\Utilities\Logging\HasHistoryActivities;
-use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Http\Request;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Support\Facades\DB;
-use Illuminate\Support\Str;
 
 class User extends Authenticatable
 {
-    use HasFactory, Notifiable, HasStringPrimaryKey, CustomSoftDelete;
+    use HasFactory, Notifiable, HasStringPrimaryKey, CustomSoftDelete, HasHistoryActivities;
 
     protected $table = 'm_pengguna';
 
