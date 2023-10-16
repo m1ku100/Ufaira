@@ -89,9 +89,9 @@ class MenuSeeder extends Seeder
                     ],
                     [
                         'nama_menu'          => 'Admin - Gallery',
-                        'nama_tampilan_menu' => 'Banner',
-                        'route_prefix_menu'  => 'profile.banner.',
-                        'view_path_menu'     => 'profile/banner',
+                        'nama_tampilan_menu' => 'Gallery',
+                        'route_prefix_menu'  => 'profile.gallery.',
+                        'view_path_menu'     => 'profile/gallery',
                         'status_menu'        => 'A',
                         'akses'              => PrivilegeGallery::getSemuaAkses()
                     ],

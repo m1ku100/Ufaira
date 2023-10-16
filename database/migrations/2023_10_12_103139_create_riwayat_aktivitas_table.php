@@ -13,9 +13,21 @@ class CreateRiwayatAktivitasTable extends Migration
      */
     public function up()
     {
-        Schema::create('riwayat_aktivitas', function (Blueprint $table) {
-            $table->id();
+        Schema::create('u_riwayat_aktivitas', function (Blueprint $table) {
+            $table->uuid('uuid_aktivitas');
+            $table->string('object');
+            $table->string('object_class');
+            $table->string('subject')
+                ->nullable();
+            $table->string('subject_class')
+                ->nullable();
+            $table->text('properties');
+            $table->text('activity')
+                ->nullable();
+            $table->string('event')
+                ->nullable();
             $table->timestamps();
+            $table->primary('uuid_aktivitas');
         });
     }
 
@@ -26,6 +38,6 @@ class CreateRiwayatAktivitasTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('riwayat_aktivitas');
+        Schema::dropIfExists('u_riwayat_aktivitas');
     }
 }
