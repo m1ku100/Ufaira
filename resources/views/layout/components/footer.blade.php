@@ -10,13 +10,13 @@
                                 <div class="cont-icon"><i class="flaticon-call"></i></div>
                                 <div class="cont-content mar-left-20">
                                     <p class="mar-0">Kami Menyediakan kebutuhan travel kamu!</p>
-                                    <p class="bold mar-0"><span>Telpon :</span> (+62) 822 1853 8394</p>
+                                    <p class="bold mar-0"><span>Telpon :</span> {{pref('display_telp')}}</p>
                                 </div>
                             </div>
                         </div>
                         <h3 class="white">Kontak Info</h3>
-                        <p>Email : ufairatour@gmail.com<br>
-                            Alamat : xxx...x...x..</p>
+                        <p>Email : {{pref('email')}}<br>
+                            Alamat : {{pref('alamat')}}</p>
                         <ul class="social-links">
                             <li><a href="#"><i class="fab fa-facebook" aria-hidden="true"></i></a></li>
                             <li><a href="#"><i class="fab fa-twitter" aria-hidden="true"></i></a></li>

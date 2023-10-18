@@ -28,28 +28,7 @@
                         <div class="why-about-inner">
                             <h4></h4>
                             <h2>Tentang UFAIRA Tour & Travel</h2>
-                            <p>Kami merupakan salah satu biro perjalanan dan transportasi yang ada di kota Surabaya dan
-                                sudah beroperasi sejak 2013. Kami melayani segala aspek tentang paket liburan mulai dari
-                                paket wisata, ziarah, persewaan mobil include driver, gathering perusahaan, outbond, dan
-                                rafting.
-                                Kita juga sudah berkerja sama dengan berbagai pihak hotel di sekitar Bromo, Ijen,
-                                Banyuwangi, Bali, Yogyakarta, Malang DLL</p>
-                            <p>
-                                Produk Ufaira Tour N Travel
-                                City Tour, Explore Adventure, Petualangan Ransel dan Koper yang unik
-                                Kategori: Kota, Budaya, Belanja, Kuliner, Pantai, Gunung, Pulau, Air Terjun, dan Budaya Lokal
-                                Level: Light Adventure atau Petualangan Ringan
-                                Aktivitas: Trekking, Sunrise & Sunset, Snorkeling & Diving, Body Rafting
-                                Fasilitas: Backpacker, Standar dan Platinum
-                                Tipe: Open Trip, Private dan Group
-
-                            </p>
-                            <p>
-                                Partner dan Rekan Kerja
-                                Ufaira Tour N Travel akan terus melangkah dan berjuang dengan banyak pihak, market
-                                place, media partner, hotel, maskapai penerbangan hingga tour agent lain agar lebih
-                                memudahkan dalam kebersamaan memperjuangkan destinasi unik Indonesia di Pulau Jawa.
-                            </p>
+                           {!! pref('teks_aboutus') !!}
                         </div>
                     </div>
                     <div class="col-md-6 col-xs-12">

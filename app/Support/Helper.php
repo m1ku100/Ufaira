@@ -79,7 +79,7 @@ function remove_public_dirname($path)
 
 function pref($key)
 {
-    $preferensi = \App\Models\Profile\Preferensi::search($key);
+    $preferensi = \App\Models\Master\Preferensi::search($key);
 
     if (is_null($preferensi)) {
         return null;

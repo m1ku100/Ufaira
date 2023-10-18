@@ -25,8 +25,7 @@
         <div class="container">
             <div class="section-title">
                 <h2>Galeri Kami</h2>
-                <p>Lorem Ipsum is simply dummy text the printing and typesetting industry. Lorem Ipsum has been the
-                    industry's standard dummy text ever since the 1500s,</p>
+                <p></p>
             </div>
             <div class="row mar-top-50">
                 <div class="col-md-4 col-sm-6 col-xs-12">
