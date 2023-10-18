@@ -1,17 +1,19 @@
 <?php
 
-namespace App\Http\Requests\Back\Master\User;
+namespace App\Http\Requests\Back\Master\Rental;
 
 use App\Http\Requests\BaseRequest;
-use App\Models\Master\User;
+use App\Models\Master\Rental;
+use App\Models\Master\Tour;
 use Illuminate\Foundation\Http\FormRequest;
 
-class UserPulihkanRequest extends BaseRequest
+class RentalHapusRequest extends BaseRequest
 {
+
     /**
-     * @var User
+     * @var Rental
      */
-    public $pengguna;
+    public $rental;
 
     /**
      * Determine if the user is authorized to make this request.
@@ -20,9 +22,9 @@ class UserPulihkanRequest extends BaseRequest
      */
     public function authorize()
     {
-        $this->pengguna = User::query()->find($this->uuid_pengguna);
+        $this->rental = Rental::query()->find($this->uuid_rental);
 
-        return $this->inspect('restore', $this->pengguna);
+        return $this->inspect('delete', $this->rental);
     }
 
     /**
@@ -33,7 +35,7 @@ class UserPulihkanRequest extends BaseRequest
     public function rules()
     {
         return [
-            'uuid_pengguna'	=> 'required|uuid|exists:m_pengguna,uuid_pengguna'
+            'uuid_rental'	=> 'required|uuid|exists:m_rental,uuid_rental'
         ];
     }
 }

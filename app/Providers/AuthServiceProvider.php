@@ -3,9 +3,11 @@
 namespace App\Providers;
 
 use App\Models\Master\Banner;
+use App\Models\Master\Rental;
 use App\Models\Master\Tour;
 use App\Models\Master\User;
 use App\Policies\BannerPolicy;
+use App\Policies\RentalPolicy;
 use App\Policies\TourPolicy;
 use App\Policies\UserPolicy;
 use Illuminate\Foundation\Support\Providers\AuthServiceProvider as ServiceProvider;
@@ -21,7 +23,8 @@ class AuthServiceProvider extends ServiceProvider
     protected $policies = [
         Banner::class => BannerPolicy::class,
         User::class => UserPolicy::class,
-        Tour::class => TourPolicy::class
+        Tour::class => TourPolicy::class,
+        Rental::class => RentalPolicy::class
     ];
 
     /**

@@ -14,6 +14,7 @@ class RoleMenuSeeder extends Seeder
         'Super Admin' => [
             'Admin - Role'                  => '*',
             'Admin - Tour'                => '*',
+            'Admin - Rental'                => '*',
             'Admin - Pengguna'              => '*',
             'Admin - Riwayat Aktivitas'     => '*',
             'Admin - Banner'                => '*',

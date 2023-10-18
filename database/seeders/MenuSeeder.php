@@ -4,6 +4,7 @@ namespace Database\Seeders;
 
 use App\Models\Master\Menu;
 use App\Support\Privilege\Master\PrivilegePengguna;
+use App\Support\Privilege\Master\PrivilegeRental;
 use App\Support\Privilege\Master\PrivilegeRole;
 use App\Support\Privilege\Master\PrivilegeTour;
 use App\Support\Privilege\Profile\PrivilegeBanner;
@@ -48,6 +49,13 @@ class MenuSeeder extends Seeder
                         'route_prefix_menu'  => 'master.tour.',
                         'status_menu'        => 'A',
                         'akses'              => PrivilegeTour::getSemuaAkses()
+                    ],
+                    [
+                        'nama_menu'          => 'Admin - Rental',
+                        'nama_tampilan_menu' => 'Rental',
+                        'route_prefix_menu'  => 'master.rental.',
+                        'status_menu'        => 'A',
+                        'akses'              => PrivilegeRental::getSemuaAkses()
                     ],
                     [
                         'nama_menu'          => 'Admin - Riwayat Aktivitas',

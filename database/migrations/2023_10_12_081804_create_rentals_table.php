@@ -13,9 +13,21 @@ class CreateRentalsTable extends Migration
      */
     public function up()
     {
-        Schema::create('rentals', function (Blueprint $table) {
-            $table->id();
+        Schema::create('m_rental', function (Blueprint $table) {
+            $table->uuid('uuid_rental');
+            $table->string('nama_kendaraan')->nullable();
+            $table->string('harga')->nullable();
+            $table->string('foto')->nullable();
+            $table->string('min_pax')->comment('Jumlah minimal orang dalam 1 kendaraan')->nullable();
+            $table->boolean('is_automatic')->default(false);
+            $table->boolean('is_include_supir')->default(false);
+            $table->boolean('is_include_bbm')->default(false);
+            $table->char('status_rental', 2)
+                ->default('I');
             $table->timestamps();
+
+            $table->primary('uuid_rental');
+
         });
     }
 
@@ -26,6 +38,6 @@ class CreateRentalsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('rentals');
+        Schema::dropIfExists('m_rental');
     }
 }

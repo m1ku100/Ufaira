@@ -13,9 +13,18 @@ class CreateTourSyaratsTable extends Migration
      */
     public function up()
     {
-        Schema::create('tour_syarats', function (Blueprint $table) {
-            $table->id();
+        Schema::create('m_tour_syarat', function (Blueprint $table) {
+            $table->uuid('uuid_tour_syarat');
+            $table->string('keterangan')->nullable();
+            $table->uuid('uuid_tour')->nullable();
             $table->timestamps();
+
+            $table->primary('uuid_tour_syarat');
+            $table->foreign('uuid_tour')
+                ->references('uuid_tour')
+                ->on('m_tour')
+                ->onDelete('set null')
+                ->onUpdate('set null');
         });
     }
 
@@ -26,6 +35,6 @@ class CreateTourSyaratsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('tour_syarats');
+        Schema::dropIfExists('m_tour_syarat');
     }
 }
