@@ -1,5 +1,5 @@
 @php
-    use App\Models\Master\Tour;
+    use App\Models\Master\User;
 @endphp
 
 @extends('layout.back.back_main')
@@ -9,13 +9,12 @@
 @section('page-title', 'Master Tour')
 
 @push('header-tools')
-    @can('create', Tour::class)
-        <button class="btn btn-success btn-tambah" title="Tambah" onclick="tambah()">Tambah Tour</button>
+    @can('create', \App\Models\Master\Tour::class)
+        <button class="btn btn-success btn-tambah" title="Tambah" onclick="tambah()">Tambah Pengguna</button>
     @endcan
 @endpush
 
 @section('content')
-
     <div class="card">
 
         <div class="card-body pl-0 pr-0">
@@ -24,7 +23,6 @@
                 <tr>
                     <th></th>
                     <th>Nama</th>
-                    <th>Email</th>
                     <th>Status</th>
                 </tr>
                 </thead>
@@ -35,7 +33,7 @@
 
 @push('misc')
     <x-modal id="form-modal" size="xl" title="Pengguna">
-        @include('page.back.master.tour.tour_index')
+        @include('page.back.master.tour.tour_form')
 
         <x-slot name="footer">
             <button onclick="before_simpan()" class="btn btn-success" id="btn-simpan">Simpan</button>
@@ -58,7 +56,7 @@
                 paging: true,
                 ordering: false,
                 ajax: {
-                    url: '{{ route('master.pengguna.data.table') }}',
+                    url: '{{ route('master.tour.data.table') }}',
                     type: 'POST',
                     dataSrc: 'data'
                 },
@@ -67,13 +65,10 @@
                         data: ''
                     },
                     {
-                        data: 'nama_pengguna'
+                        data: 'nama_tour'
                     },
                     {
-                        data: 'email_pengguna'
-                    },
-                    {
-                        data: 'status_pengguna',
+                        data: 'status_tour',
                         render: function (data, type, full, meta) {
                             let badge_status = {
                                 I : {
@@ -111,29 +106,29 @@
 
                         btn_group.append(btn_show);
 
-                        @can('delete', User::class)
-                        if (full.status_pengguna != 'D') {
+
+                        if (full.status_tour != 'D') {
                             btn_group.append(btn_hapus);
                         }
-                        @endcan
 
-                            @can('restore', User::class)
-                        if (full.status_pengguna == 'D') {
+
+
+                        if (full.status_tour == 'D') {
                             btn_group.append(btn_pulih);
                         }
-                        @endcan
 
-                            @can('forceDelete', User::class)
-                        if (full.status_pengguna == 'D') {
+
+
+                        if (full.status_tour == 'D') {
                             btn_group.append(btn_hapus_permanen);
                         }
-                        @endcan
+
 
                             return btn_group.prop('outerHTML');
                     }
                 }],
                 createdRow: function(row, data, dataIndex) {
-                    if (data.status_pengguna == 'D') {
+                    if (data.status_tour == 'D') {
                         $(row).addClass('bg-danger-light');
                     }
                 }
@@ -179,20 +174,18 @@
 
             $('#role').val(null).trigger('change');
 
-            load_daftar_role(data.uuid_pengguna);
-
-            if (data.status_pengguna == 'D') {
+            if (data.status_tour == 'D') {
                 disable_simpan();
             }
 
-            @cannot('update', User::class)
+
             disable_simpan();
-            @endcannot
+
         }
 
-        function load_daftar_role(uuid_pengguna) {
-            $.post('{{ route('master.pengguna.daftar.role') }}', {
-                uuid_pengguna: uuid_pengguna
+        function load_daftar_role(uuid_tour) {
+            $.post('{{ route('master.tour.daftar.role') }}', {
+                uuid_tour: uuid_tour
             }).done(function (response) {
                 if (response.success) {
                     var selected = [];
@@ -238,8 +231,8 @@
         function hapus(data) {
             showLoader('Sedang memproses ...');
 
-            $.post('{{ route('master.pengguna.hapus') }}', {
-                uuid_pengguna: data.uuid_pengguna
+            $.post('{{ route('master.tour.hapus') }}', {
+                uuid_tour: data.uuid_tour
             }).done(function (response) {
                 if (response.success) {
                     swal_success('Berhasil menghapus pengguna ' + data.nama_pengguna);
@@ -263,8 +256,8 @@
         function pulihkan(data) {
             showLoader('Sedang memproses ...');
 
-            $.post('{{ route('master.pengguna.pulihkan') }}', {
-                uuid_pengguna: data.uuid_pengguna
+            $.post('{{ route('master.tour.pulihkan') }}', {
+                uuid_tour: data.uuid_tour
             }).done(function (response) {
                 if (response.success) {
                     swal_success('Berhasil memulihkan pengguna ' + data.nama_pengguna);
@@ -288,8 +281,8 @@
         function hapus_permanen(data) {
             showLoader('Sedang memproses ...');
 
-            $.post('{{ route('master.pengguna.hapus.permanen') }}', {
-                uuid_pengguna: data.uuid_pengguna
+            $.post('{{ route('master.tour.hapus.permanen') }}', {
+                uuid_tour: data.uuid_tour
             }).done(function (response) {
                 if (response.success) {
                     swal_success('Berhasil menghapus permanen pengguna ' + data.nama_pengguna);

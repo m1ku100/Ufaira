@@ -12,6 +12,10 @@ class PrivilegeTour extends BasePrivilege
 
     public const MENGHAPUS = 'Menghapus Tour';
 
+    public const MEMULIHKAN = 'Memulihkan Tour';
+
+    public const MENGHAPUS_PERMANEN = 'Menghapus Permanen Tour';
+
     public const MENGUBAH_DETAIL = 'Mengubah Detail Tour';
 
     public const MENAMBAH_DESTINASI = 'Menambah Destinasi Tour';

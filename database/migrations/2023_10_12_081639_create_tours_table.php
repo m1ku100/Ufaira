@@ -17,6 +17,8 @@ class CreateToursTable extends Migration
             $table->uuid('uuid_tour');
             $table->string('nama_tour', 500)
                 ->nullable();
+            $table->char('status_tour', 2)
+                ->default('I');
             $table->string('slug_tour', 300)
                 ->nullable()
                 ->unique();
