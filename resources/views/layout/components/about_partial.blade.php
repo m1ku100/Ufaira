@@ -13,7 +13,7 @@
                         </div>
                         <div class="why-us-content">
                             <h3><a href="#">Support Customer Service</a></h3>
-                            <p class="mar-0">With 500+ suppliers and the purchasing power of 300 million members</p>
+                            <p class="mar-0">Team kami memberikan layanan terbaik selama 24/7 </p>
                         </div>
                     </div>
                 </div>
@@ -24,8 +24,8 @@
                         </div>
                         <div class="why-us-content">
                             <h3><a href="#">Penginapan Terpercaya</a></h3>
-                            <p class="mar-0">Fabulous Travel worry free knowing that we're here if you need us, 24 hours
-                                a day</p>
+                            <p class="mar-0">Penginapan dengan kualitas terbaik yang akan memanjakan
+                                disaat anda beristirahat</p>
                         </div>
                     </div>
                 </div>
@@ -36,8 +36,7 @@
                         </div>
                         <div class="why-us-content">
                             <h3><a href="#">Paket Perjalanan</a></h3>
-                            <p class="mar-0">1,200,000 hotels in more than 200 countries and regions & flights to over
-                                5,000 citites.</p>
+                            <p class="mar-0">Paket perjalanan yang sangat terjangkau untuk semua kalangan</p>
                         </div>
                     </div>
                 </div>
@@ -50,7 +49,7 @@
                         </div>
                         <div class="why-us-content">
                             <h3><a href="#">Harga Bersahabat</a></h3>
-                            <p class="mar-0">With 500+ suppliers and the purchasing power of 300 million members</p>
+                            <p class="mar-0">Harga yang sangat ramah dikantong dengan layanan yang luar biasa</p>
                         </div>
                     </div>
                 </div>
@@ -61,8 +60,7 @@
                         </div>
                         <div class="why-us-content">
                             <h3><a href="#">Pelayanan Terpercaya</a></h3>
-                            <p class="mar-0">Fabulous Travel worry free knowing that we're here if you need us, 24 hours
-                                a day</p>
+                            <p class="mar-0">Bebas khawatir karena kami siap membantu jika Anda membutuhkan kami</p>
                         </div>
                     </div>
                 </div>
@@ -73,8 +71,7 @@
                         </div>
                         <div class="why-us-content">
                             <h3><a href="#">Cakupan Luas</a></h3>
-                            <p class="mar-0">1,200,000 hotels in more than 200 countries and regions & flights to over
-                                5,000 citites.</p>
+                            <p class="mar-0">Lebih dari 20 Pilihan tempat wisata yang bisa anda kunjungi dan singgahi </p>
                         </div>
                     </div>
                 </div>

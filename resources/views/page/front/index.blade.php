@@ -17,8 +17,7 @@
                                 <p class="mar-bottom-20">Foresee the pain and trouble that are bound to ensue and equal
                                     fail
                                     in their duty through weakness. </p>
-                                <a href="" class="biz-btn">Explore More</a>
-                                <a href="" class="biz-btn mar-left-10">Contact Us</a>
+                                <a href="" class="biz-btn mar-left-10">Hubungi Kami</a>
                             </div>
                             <div class="overlay"></div>
                         </div>
@@ -32,7 +31,8 @@
                                 <p class="mar-bottom-20">Find awesome hotel, tour, car and activities in London, Foresee
                                     the
                                     pain and trouble</p>
-                                <a href="" class="biz-btn">Find More</a>
+                                <a href="" class="biz-btn mar-left-10">Hubungi Kami</a>
+
                             </div>
                             <div class="overlay"></div>
                         </div>
@@ -46,7 +46,8 @@
                                 <p class="mar-bottom-20">Find awesome hotel, tour, car and activities in London to ensue
                                     and
                                     equal fail in their duty</p>
-                                <a href="" class="biz-btn">View More</a>
+                                <a href="" class="biz-btn mar-left-10">Hubungi Kami</a>
+
                             </div>
                             <div class="overlay"></div>
                         </div>
@@ -60,7 +61,8 @@
                                 <p class="mar-bottom-20">Find awesome hotel, tour, car and activities in London to ensue
                                     and
                                     equal fail in their duty</p>
-                                <a href="" class="biz-btn">View More</a>
+                                <a href="" class="biz-btn mar-left-10">Hubungi Kami</a>
+
                             </div>
                             <div class="overlay"></div>
                         </div>
@@ -136,11 +138,11 @@
                         <img src="{{asset('front/images/trending1.jpg')}}" alt="image">
                     </div>
                     <div class="slider-content">
-                        <h6 class="mar-bottom-10"><i class="fa fa-map-marker-alt"></i> United Kingdom</h6>
-                        <h4><a href="#">Earning Asiana Club Miles</a></h4>
-                        <p>With upto 30% Off, experience Europe your way!</p>
+                        <h6 class="mar-bottom-10"><i class="fa fa-map-marker-alt"></i> Jawa Timur </h6>
+                        <h4><a href="#">Toyota Kijang Zenix</a></h4>
+                        <p>Automatic || Penumpang 1 - 5 Orang</p>
                         <div class="deal-price">
-                            <p class="price">From <span>$250.00</span></p>
+                            <p class="price">Rp 400.000 <span></span></p>
                         </div>
                     </div>
                 </div>
@@ -149,11 +151,11 @@
                         <img src="{{asset('front/images/trending1.jpg')}}" alt="image">
                     </div>
                     <div class="slider-content">
-                        <h6 class="mar-bottom-10"><i class="fa fa-map-marker-alt"></i> Thailand</h6>
-                        <h4><a href="#">Save big on hotels!</a></h4>
-                        <p>With upto 30% Off, experience Europe your way!</p>
+                        <h6 class="mar-bottom-10"><i class="fa fa-map-marker-alt"></i> Jawa Timur </h6>
+                        <h4><a href="#">Toyota Hiace</a></h4>
+                        <p>Automatic || Penumpang 1 - 10 Orang</p>
                         <div class="deal-price">
-                            <p class="price">From <span>$250.00</span></p>
+                            <p class="price">Rp 1.200.000 <span></span></p>
                         </div>
                     </div>
                 </div>
@@ -162,28 +164,14 @@
                         <img src="{{asset('front/images/trending1.jpg')}}" alt="image">
                     </div>
                     <div class="slider-content">
-                        <h6 class="mar-bottom-10"><i class="fa fa-map-marker-alt"></i> South Korea</h6>
-                        <h4><a href="#">Experience Europe Your Way</a></h4>
-                        <p>With upto 30% Off, experience Europe your way!</p>
+                        <h6 class="mar-bottom-10"><i class="fa fa-map-marker-alt"></i> Jawa Timur </h6>
+                        <h4><a href="#">Suzuki APV Arena</a></h4>
+                        <p>Automatic || Penumpang 1 - 5 Orang</p>
                         <div class="deal-price">
-                            <p class="price">From <span>$250.00</span></p>
+                            <p class="price">Rp 800.000 <span></span></p>
                         </div>
                     </div>
                 </div>
-                <div class="col-md-4 slider-item">
-                    <div class="slider-image">
-                        <img src="{{asset('front/images/trending1.jpg')}}" alt="image">
-                    </div>
-                    <div class="slider-content">
-                        <h6 class="mar-bottom-10"><i class="fa fa-map-marker-alt"></i> Germany</h6>
-                        <h4><a href="#">Earning Asiana Club Miles</a></h4>
-                        <p>With upto 30% Off, experience Europe your way!</p>
-                        <div class="deal-price">
-                            <p class="price">From <span>$250.00</span></p>
-                        </div>
-                    </div>
-                </div>
-
             </div>
         </div>
     </section>
