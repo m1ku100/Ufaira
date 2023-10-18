@@ -4,10 +4,12 @@ namespace App\Providers;
 
 use App\Contract\Master\BannerContract;
 use App\Contract\Master\RoleContract;
+use App\Contract\Master\TourContract;
 use App\Contract\Master\UserContract;
 use App\Contract\Utilities\PreferensiContract;
 use App\Repositories\Back\Master\BannerRepository;
 use App\Repositories\Back\Master\RoleRepository;
+use App\Repositories\Back\Master\TourRepository;
 use App\Repositories\Back\Master\UserRepository;
 use App\Repositories\Back\Utilities\PreferensiRepository;
 use Illuminate\Support\ServiceProvider;
@@ -19,7 +21,8 @@ class RepositoryServiceProvider extends ServiceProvider
         RoleContract::class => RoleRepository::class,
         BannerContract::class => BannerRepository::class,
         UserContract::class => UserRepository::class,
-        PreferensiContract::class => PreferensiRepository::class
+        PreferensiContract::class => PreferensiRepository::class,
+        TourContract::class => TourRepository::class
     ];
     /**
      * Register services.

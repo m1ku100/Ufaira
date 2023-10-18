@@ -44,8 +44,8 @@ class MenuSeeder extends Seeder
                     ],
                     [
                         'nama_menu'          => 'Admin - Tour',
-                        'nama_tampilan_menu' => 'Produk',
-                        'route_prefix_menu'  => 'master.produk.',
+                        'nama_tampilan_menu' => 'Tour',
+                        'route_prefix_menu'  => 'master.tour.',
                         'status_menu'        => 'A',
                         'akses'              => PrivilegeTour::getSemuaAkses()
                     ],

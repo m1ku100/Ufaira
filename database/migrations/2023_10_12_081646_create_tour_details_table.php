@@ -15,8 +15,8 @@ class CreateTourDetailsTable extends Migration
     {
         Schema::create('m_tour_detail', function (Blueprint $table) {
             $table->uuid('uuid_tour_detail');
-            $table->string('harga');
-            $table->string('min_pax')->comment('Jumlah minimal orang per tour');
+            $table->string('harga')->nullable();
+            $table->string('min_pax')->comment('Jumlah minimal orang per tour')->nullable();
             $table->uuid('uuid_tour')->nullable();
             $table->timestamps();
 
