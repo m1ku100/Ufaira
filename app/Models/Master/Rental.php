@@ -39,6 +39,29 @@ class Rental extends Model
     public const AKTIF = 'I';
 
 
+    public function simpan($blog, $data, $daftar_kategori)
+    {
+        DB::beginTransaction();
+
+        try {
+            if (is_null($blog)) {
+                 self::query()
+                    ->create($data);
+            } else {
+                $blog->update($data);
+            }
+
+        } catch (Exception $exception) {
+            DB::rollBack();
+
+            return $exception->getMessage();
+        }
+
+        DB::commit();
+
+        return true;
+    }
+
     public function tableData(Request $request)
     {
         $builder = DB::table('m_rental as mpg')

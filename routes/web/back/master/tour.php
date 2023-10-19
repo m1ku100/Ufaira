@@ -21,6 +21,10 @@ Route::group([
 
     Route::post('daftar-role', [TourController::class, 'daftarRole'])->name('daftar.role');
 
+    // Detail Goes Here
+
+
+
 
     Route::group([
         'prefix' => 'data',

@@ -2,10 +2,11 @@
 
 namespace App\Http\Requests\Back\Master\Rental;
 
+use App\Http\Requests\BaseRequest;
 use App\Models\Master\Rental;
 use Illuminate\Foundation\Http\FormRequest;
 
-class RentalPulihkanRequest extends FormRequest
+class RentalPulihkanRequest extends BaseRequest
 {
 
     /**

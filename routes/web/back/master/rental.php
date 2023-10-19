@@ -19,8 +19,6 @@ Route::group([
 
     Route::post('hapus-permanen', [RentalController::class, 'hapusPermanent'])->name('hapus.permanen');
 
-    Route::post('daftar-role', [RentalController::class, 'daftarRole'])->name('daftar.role');
-
 
     Route::group([
         'prefix' => 'data',
