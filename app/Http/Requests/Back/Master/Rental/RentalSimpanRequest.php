@@ -18,7 +18,7 @@ class RentalSimpanRequest extends BaseRequest
      */
     public function authorize()
     {
-        if (!empty($this->uuid_tour)) {
+        if (!empty($this->uuid_rental)) {
             $this->rental = Rental::query()->find($this->uuid_rental);
         }
 
@@ -26,7 +26,7 @@ class RentalSimpanRequest extends BaseRequest
             return $this->inspect('create', Rental::class);
         }
 
-        return $this->inspect('update', $this->tour);
+        return $this->inspect('update', $this->rental);
     }
 
     /**
@@ -42,7 +42,7 @@ class RentalSimpanRequest extends BaseRequest
             'min_pax' => 'required',
             'is_automatic' => 'required',
             'is_include_supir' => 'required',
-            'is_include_bbm' => 'required',
+//            'is_include_bbm' => 'required',
 
         ];
 
@@ -80,8 +80,8 @@ class RentalSimpanRequest extends BaseRequest
             'min_pax' => $this->min_pax,
             'is_automatic' => $this->is_automatic,
             'is_include_supir' => $this->is_include_supir,
-            'is_include_bbm' => $this->is_include_bbm,
-            'status_tour' => Rental::AKTIF,
+            'is_include_bbm' => $this->is_include_bbm ?? false,
+            'status_rental' => Rental::AKTIF,
             'foto' => $thumbnail,
             'uuid_rental' => $this->addMode() ? new_uuid() : $this->uuid_rental
         ];

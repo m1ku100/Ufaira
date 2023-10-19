@@ -14,9 +14,9 @@ class Rental extends Model
 {
     use HasFactory, HasStringPrimaryKey, CustomSoftDelete, HasHistoryActivities;
 
-    protected $table = 'm_tour_detail';
+    protected $table = 'm_rental';
 
-    protected $primaryKey = 'uuid_tour_detail';
+    protected $primaryKey = 'uuid_rental';
 
     public $incrementing = false;
 
@@ -24,22 +24,22 @@ class Rental extends Model
 
     protected $guarded = [];
 
-    protected $prefix_kode = 'TOUR';
+    protected $prefix_kode = 'Rental';
 
     protected $field_kode = '';
 
-    protected $object_name_field = 'nama_rental';
+    protected $object_name_field = 'nama_kendaraan';
 
     protected $status_field = 'status_rental';
 
-    protected $literal_name = 'Tour';
+    protected $literal_name = 'Rental';
 
     public const DIHAPUS = 'D';
 
     public const AKTIF = 'I';
 
 
-    public function simpan($blog, $data, $daftar_kategori)
+    public function simpan($blog, $data)
     {
         DB::beginTransaction();
 

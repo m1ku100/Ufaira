@@ -22,7 +22,9 @@
                 <thead>
                 <tr>
                     <th></th>
-                    <th>Nama</th>
+                    <th>Nama Kendaraan</th>
+                    <th>Harga</th>
+                    <th>Penumpang Maksimal</th>
                     <th>Status</th>
                 </tr>
                 </thead>
@@ -32,7 +34,7 @@
 @endsection
 
 @push('misc')
-    <x-modal id="form-modal" size="xl" title="Pengguna">
+    <x-modal id="form-modal" size="xl" title="Form Rental">
         @include('page.back.master.rental.rental_form')
 
         <x-slot name="footer">
@@ -56,7 +58,7 @@
                 paging: true,
                 ordering: false,
                 ajax: {
-                    url: '{{ route('master.tour.data.table') }}',
+                    url: '{{ route('master.rental.data.table') }}',
                     type: 'POST',
                     dataSrc: 'data'
                 },
@@ -65,7 +67,13 @@
                         data: ''
                     },
                     {
-                        data: 'nama_tour'
+                        data: 'nama_kendaraan'
+                    },
+                    {
+                        data: 'harga'
+                    },
+                    {
+                        data: 'min_pax'
                     },
                     {
                         data: 'status_rental',
@@ -178,14 +186,14 @@
                 disable_simpan();
             }
 
+            $('#foto').loadPreviewImage('{{ url("/")}}/' + data.foto);
 
-            disable_simpan();
 
         }
 
-        function load_daftar_role(uuid_tour) {
+        function load_daftar_role(uuid_rental) {
             $.post('{{ route('master.tour.daftar.role') }}', {
-                uuid_tour: uuid_tour
+                uuid_rental: uuid_rental
             }).done(function (response) {
                 if (response.success) {
                     var selected = [];
@@ -198,23 +206,26 @@
         }
 
         function before_simpan(e) {
-            var form_data = $('#form-data').serializeArray();
+            var form_data = new FormData($('#form-data')[0]);
 
             showLoader('Sedang menyimpan ...');
 
-            $.post('{{ route('master.tour.simpan') }}', form_data)
-                .done(function (response) {
-                    if (response.success) {
-                        Swal.fire({
-                            icon: 'success',
-                            text: 'Berhasil menyimpan data penguna'
-                        });
+            $.post({
+                url: '{{ route('master.rental.simpan') }}',
+                data: form_data,
+                processData: false,
+                contentType: false
+            }).done(function (response) {
+                if (response.success) {
+                    swal_success('Berhasil menyimpan data treatment');
 
-                        table_data.ajax.reload();
+                    $('#form-modal').modal('hide');
 
-                        $('#form-modal').modal('hide');
-                    }
-                }).fail(ajaxFail)
+                    table_data.ajax.reload();
+                } else {
+                    swal_error(response.message);
+                }
+            }).fail(ajaxFail)
         }
 
         function before_hapus(e) {
@@ -231,8 +242,8 @@
         function hapus(data) {
             showLoader('Sedang memproses ...');
 
-            $.post('{{ route('master.tour.hapus') }}', {
-                uuid_tour: data.uuid_tour
+            $.post('{{ route('master.rental.hapus') }}', {
+                uuid_rental: data.uuid_rental
             }).done(function (response) {
                 if (response.success) {
                     swal_success('Berhasil menghapus pengguna ' + data.nama_pengguna);
@@ -256,8 +267,8 @@
         function pulihkan(data) {
             showLoader('Sedang memproses ...');
 
-            $.post('{{ route('master.tour.pulihkan') }}', {
-                uuid_tour: data.uuid_tour
+            $.post('{{ route('master.rental.pulihkan') }}', {
+                uuid_rental: data.uuid_rental
             }).done(function (response) {
                 if (response.success) {
                     swal_success('Berhasil memulihkan pengguna ' + data.nama_pengguna);
@@ -281,8 +292,8 @@
         function hapus_permanen(data) {
             showLoader('Sedang memproses ...');
 
-            $.post('{{ route('master.tour.hapus.permanen') }}', {
-                uuid_tour: data.uuid_tour
+            $.post('{{ route('master.rental.hapus.permanen') }}', {
+                uuid_rental: data.uuid_rental
             }).done(function (response) {
                 if (response.success) {
                     swal_success('Berhasil menghapus permanen pengguna ' + data.nama_pengguna);
