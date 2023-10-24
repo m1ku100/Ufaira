@@ -3,8 +3,10 @@
 namespace App\Repositories\Back\Master;
 
 use App\Contract\Master\BannerContract;
-use App\Http\Requests\Back\Master\Banner\SimpanBannerRequest;
 use App\Http\Requests\Back\Master\Banner\HapusBannerRequest;
+use App\Http\Requests\Back\Master\Banner\SimpanBannerRequest;
+use App\Http\Requests\Back\Master\Banner\SimpanGalleryRequest;
+use App\Http\Requests\Back\Master\Banner\HapusGalleryRequest;
 
 use App\Models\Master\Banner;
 use App\Repositories\BaseRepository;

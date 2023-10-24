@@ -17,7 +17,6 @@ class CreateGalleriesTable extends Migration
             $table->uuid('uuid_gallery');
             $table->string('gambar_gallery');
             $table->string('link_gallery')->nullable();
-            $table->uuid('uuid_produk')->nullable();
 
             $table->timestamps();
             $table->uuid('uuid_tour_detail')->nullable();

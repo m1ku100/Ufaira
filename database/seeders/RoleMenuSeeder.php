@@ -18,6 +18,7 @@ class RoleMenuSeeder extends Seeder
             'Admin - Pengguna'              => '*',
             'Admin - Riwayat Aktivitas'     => '*',
             'Admin - Banner'                => '*',
+            'Admin - Gallery'                => '*',
             'Admin - Preferensi'            => '*'
         ],
         'Admin' => [
