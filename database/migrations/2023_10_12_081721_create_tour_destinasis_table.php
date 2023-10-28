@@ -14,12 +14,12 @@ class CreateTourDestinasisTable extends Migration
     public function up()
     {
         Schema::create('m_tour_destinasi', function (Blueprint $table) {
-            $table->uuid('uuid_tour_detail');
+            $table->uuid('uuid_tour_destinasi');
             $table->string('destinasi');
             $table->uuid('uuid_tour')->nullable();
             $table->timestamps();
 
-            $table->primary('uuid_tour_detail');
+            $table->primary('uuid_tour_destinasi');
             $table->foreign('uuid_tour')
                 ->references('uuid_tour')
                 ->on('m_tour')

@@ -23,13 +23,13 @@ Route::group([
 
     // Detail Goes Here
 
-
+    Route::get('detail', [TourController::class, 'detailTour'])->name('detail');
 
 
     Route::group([
         'prefix' => 'data',
         'as' => 'data.'
-    ], function (){
+    ], function () {
 
         Route::post('table', [TourController::class, 'tableData'])->name('table');
 

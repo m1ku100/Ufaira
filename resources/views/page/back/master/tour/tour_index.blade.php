@@ -100,11 +100,13 @@
                     render: function (data, type, full, meta) {
                         let btn_group = $('<div></div>').addClass('btn-group btn-group-sm');
                         let btn_show = create_table_btn('Tampilkan', 'btn btn-primary btn-show', 'far fa-eye');
+                        let btn_show_detail = create_table_btn('Detail Tour', 'btn btn-info btn-detail', 'far fa-info');
                         let btn_hapus = create_table_btn('Hapus', 'btn btn-danger btn-hapus', 'fas fa-trash');
                         let btn_pulih = create_table_btn('Pulihkan', 'btn btn-success btn-pulih', 'fas fa-trash');
                         let btn_hapus_permanen = create_table_btn('Hapus Permanen', 'btn btn-outline-danger btn-hapus-permanen', 'fas fa-trash');
 
                         btn_group.append(btn_show);
+                        btn_group.append(btn_show_detail);
 
 
                         if (full.status_tour != 'D') {
@@ -137,6 +139,7 @@
             table_data = table_data_element.DataTable();
 
             table_data_element.on('click', 'button.btn-show', before_show);
+            table_data_element.on('click', 'button.btn-detail', before_show_detail);
             table_data_element.on('click', 'button.btn-hapus', before_hapus);
             table_data_element.on('click', 'button.btn-pulih', before_pulihkan);
             table_data_element.on('click', 'button.btn-hapus-permanen', before_hapus_permanen);
@@ -180,6 +183,13 @@
 
 
             disable_simpan();
+
+        }
+
+        function before_show_detail(e){
+            let data = getTableData(e);
+
+            window.open('{{url('sys/master/tour/detail')}}?uuid_tour=' + data.uuid_tour, '_blank').focus();
 
         }
 

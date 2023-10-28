@@ -9,6 +9,7 @@ use App\Http\Requests\Back\Master\Tour\TourHapusRequest;
 use App\Http\Requests\Back\Master\Tour\TourPulihkanRequest;
 use App\Http\Requests\Back\Master\Tour\TourSimpanRequest;
 use App\Models\Master\Tour;
+use Illuminate\Http\Request;
 
 class TourController extends Controller
 {
@@ -73,4 +74,17 @@ class TourController extends Controller
         return $this->compileResponse($response);
     }
 
+
+    public function detailTour(Request $request)
+    {
+        $tour = Tour::query()->find($request->uuid_tour);
+
+        if (empty($tour)) {
+            abort(404);
+        }
+
+        return view('page.back.master.tour.detail.detail_form',[
+            'data' => $tour
+        ]);
+    }
 }

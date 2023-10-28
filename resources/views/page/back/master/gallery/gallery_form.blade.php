@@ -7,7 +7,7 @@
         <x-input-image :base64="false" id="gambar_gallery" name="gambar_gallery"></x-input-image>
     </div>
 
-    <div class="form-group">
+    <div class="form-group d-none" >
         <label for="kode_produk">Link</label>
         <x-input-text id="link_banner" name="link_banner"></x-input-text>
     </div>
