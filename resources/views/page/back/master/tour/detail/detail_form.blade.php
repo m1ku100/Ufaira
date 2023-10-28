@@ -23,54 +23,34 @@
                     <div class="card-body">
                         <div class="form-group row">
                             <div class="col-7">
-                                <label for="email_pengguna">Harga per Pax</label>
-                                <x-input-text id="email_pengguna" name="email_pengguna"
-                                               placeholder="Email"></x-input-text>
+                                <label for="harga">Harga per Pax</label>
+                                <x-input-text id="harga" name="harga"
+                                               placeholder="Harga per Orangan"></x-input-text>
                             </div>
                             <div class="col-3">
-                                <label for="email_pengguna">Maximum Pax dalam 1 Paket</label>
-                                <x-input-text id="email_pengguna" name="email_pengguna"
-                                               placeholder="Email"></x-input-text>
+                                <label for="min_pax">Maximum Pax dalam 1 Paket</label>
+                                <x-input-text id="min_pax" name="min_pax"
+                                               placeholder="Jumlah Orang dalam 1 Perjalanan"></x-input-text>
                             </div>
                         </div>
 
                     </div>
                 </div>
 
+
                 <div class="card">
                     <div class="card-body">
-                        <h5 class="card-title">Penayangan Karir</h5>
-                        <div class="row">
-                            <div class="form-group col-12">
-                                <input type="text" id="start_waktu_tayang" name="start_waktu_tayang">
-                            </div>
+                        <label class="card-title">Syarat & Ketentuan Tour <small>(Bila ada)</small></label>
+                        <div class="summernote" id="catatan_karir">
 
                         </div>
                     </div>
                 </div>
 
-                <div class="card">
-                    <div class="card-body">
-                        <h5 class="card-title">Kualifikasi</h5>
-                        <div class="summernote" id="kualifikasi_karir">
-
-
-                        </div>
-                    </div>
-                </div>
 
                 <div class="card">
                     <div class="card-body">
-                        <h5 class="card-title">Deskripsi Posisi <small>(hak & kewajiban)</small></h5>
-                        <div class="summernote" id="deskripsi_karir">
-
-                        </div>
-                    </div>
-                </div>
-
-                <div class="card">
-                    <div class="card-body">
-                        <h5 class="card-title">Catatan <small>(Bila ada)</small></h5>
+                        <label class="card-title">Syarat & Ketentuan Tour <small>(Bila ada)</small></label>
                         <div class="summernote" id="catatan_karir">
 
                         </div>
