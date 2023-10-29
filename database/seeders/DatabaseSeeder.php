@@ -21,6 +21,7 @@ class DatabaseSeeder extends Seeder
         $this->call(SliderSeeder::class);
         $this->call(GallerySeeder::class);
         $this->call(RentalSeeder::class);
+        $this->call(TourSeeder::class);
 
 
     }
