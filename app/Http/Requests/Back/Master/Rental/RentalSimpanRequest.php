@@ -65,7 +65,7 @@ class RentalSimpanRequest extends BaseRequest
         if ($this->hasFile('foto')) {
             $thumbnail = $this->storeFile(
                 $this->file('foto'),
-                'images/rental',
+                'assets/images/rental',
                 Str::slug(strtolower($this->file('foto')->getClientOriginalName())) . '-' . date('ymd'),
                 'public_path');
         } else {
