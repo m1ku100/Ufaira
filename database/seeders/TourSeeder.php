@@ -35,7 +35,20 @@ class TourSeeder extends Seeder
                     'Biaya makan terlepas dari paket',
                 ],
                 'min_pax' => '5',
-                'syarat' => '5'
+                'syarat' => ' <li><i class="fa fa-circle"></i>Harga di atas berlaku untuk WNI, terdapat charge untuk
+                                    tiket dan service WNA sebesar Rp xxx.xxx ,- per orang (dapat dibayar langsung ke
+                                    driver di hari-H)
+                                </li>
+                                <li><i class="fa fa-circle"></i> Kami menerima pembayaran penuh atau 30% di muka sebagai
+                                    tanda jadi, pelunasan bisa dibayarkan cash ke tour leader / via transfer / QRIS
+                                </li>
+                                <li><i class="fa fa-circle"></i> Tanda jadi tidak dapat direfund bila terjadi pembatalan
+                                    dari pihak tamu, reschedule kadangkala memungkinkan untuk konfirmasi maksimal H-1
+                                </li>
+                                <li><i class="fa fa-circle"></i> Destinasi Wisata tidak baku dan dapat berubah karena
+                                    kondisi di area Bromo (lalu lintas, cuaca) tanpa mengganggu agenda secara
+                                    keseluruhan
+                                </li>'
             ],
             'foto_slider' => [
 
@@ -68,7 +81,20 @@ class TourSeeder extends Seeder
                     'Biaya makan terlepas dari paket',
                 ],
                 'min_pax' => '5',
-                'syarat' => '5'
+                'syarat' => ' <li><i class="fa fa-circle"></i>Harga di atas berlaku untuk WNI, terdapat charge untuk
+                                    tiket dan service WNA sebesar Rp xxx.xxx ,- per orang (dapat dibayar langsung ke
+                                    driver di hari-H)
+                                </li>
+                                <li><i class="fa fa-circle"></i> Kami menerima pembayaran penuh atau 30% di muka sebagai
+                                    tanda jadi, pelunasan bisa dibayarkan cash ke tour leader / via transfer / QRIS
+                                </li>
+                                <li><i class="fa fa-circle"></i> Tanda jadi tidak dapat direfund bila terjadi pembatalan
+                                    dari pihak tamu, reschedule kadangkala memungkinkan untuk konfirmasi maksimal H-1
+                                </li>
+                                <li><i class="fa fa-circle"></i> Destinasi Wisata tidak baku dan dapat berubah karena
+                                    kondisi di area Bromo (lalu lintas, cuaca) tanpa mengganggu agenda secara
+                                    keseluruhan
+                                </li>'
             ],
             'foto_slider' => [
 

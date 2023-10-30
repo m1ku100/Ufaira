@@ -6,7 +6,7 @@
 
 @section('title', 'Detail Tour')
 
-@section('page-title', 'Detail Tour')
+@section('page-title', 'Detail Tour '. $data->nama_tour )
 
 @push('header-tools')
     <button type="button" class="btn btn-success" onclick="simpan()">Simpan</button>
@@ -25,12 +25,12 @@
                             <div class="col-7">
                                 <label for="harga">Harga per Pax</label>
                                 <x-input-text id="harga" name="harga"
-                                               placeholder="Harga per Orangan"></x-input-text>
+                                              placeholder="Harga per Orangan"></x-input-text>
                             </div>
                             <div class="col-3">
-                                <label for="min_pax">Maximum Pax dalam 1 Paket</label>
+                                <label for="min_pax">Minimum Pax dalam 1 Paket</label>
                                 <x-input-text id="min_pax" name="min_pax"
-                                               placeholder="Jumlah Orang dalam 1 Perjalanan"></x-input-text>
+                                              placeholder="Jumlah Orang dalam 1 Perjalanan"></x-input-text>
                             </div>
                         </div>
 
@@ -42,20 +42,41 @@
                     <div class="card-body">
                         <label class="card-title">Syarat & Ketentuan Tour <small>(Bila ada)</small></label>
                         <div class="summernote" id="catatan_karir">
-
+                            {!! $data->getDetail->syarat !!}
                         </div>
                     </div>
                 </div>
-
 
                 <div class="card">
                     <div class="card-body">
-                        <label class="card-title">Syarat & Ketentuan Tour <small>(Bila ada)</small></label>
-                        <div class="summernote" id="catatan_karir">
-
+                        <div class="form-group">
+                            <label for="foto_produk">Foto</label>
+                            <div class="row">
+                                <div class="col-xl-3 col-6 gambar-produk-wrapper">
+                                    <x-input-image :base64="false" id="foto_produk_1" class="foto_produk" name="foto_produk[]"></x-input-image>
+                                    <input type="hidden" name="foto_produk_lama[]" value="">
+                                    <button class="btn btn-danger btn-sm btn-hapus-gambar" type="button">Hapus</button>
+                                </div>
+                                <div class="col-xl-3 col-6 gambar-produk-wrapper">
+                                    <x-input-image :base64="false" id="foto_produk_2" class="foto_produk" name="foto_produk[]"></x-input-image>
+                                    <input type="hidden" name="foto_produk_lama[]" value="">
+                                    <button class="btn btn-danger btn-sm btn-hapus-gambar" type="button">Hapus</button>
+                                </div>
+                                <div class="col-xl-3 col-6 gambar-produk-wrapper">
+                                    <x-input-image :base64="false" id="foto_produk_3" class="foto_produk" name="foto_produk[]"></x-input-image>
+                                    <input type="hidden" name="foto_produk_lama[]" value="">
+                                    <button class="btn btn-danger btn-sm btn-hapus-gambar" type="button">Hapus</button>
+                                </div>
+                                <div class="col-xl-3 col-6 gambar-produk-wrapper">
+                                    <x-input-image :base64="false" id="foto_produk_4" class="foto_produk" name="foto_produk[]"></x-input-image>
+                                    <input type="hidden" name="foto_produk_lama[]" value="">
+                                    <button class="btn btn-danger btn-sm btn-hapus-gambar" type="button">Hapus</button>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
+
             </div>
         </div>
     </form>
@@ -71,7 +92,29 @@
     <script>
 
         $(function () {
+            {{--$.post({--}}
+            {{--    url :'{{ route('master.produk.get.produkgambar') }}',--}}
+            {{--    data: {--}}
+            {{--        uuid_produk : data.uuid_produk--}}
+            {{--    },--}}
+            {{--})--}}
+            {{--    .done(function (response) {--}}
+            {{--        if (response.success) {--}}
+            {{--            $('.btn-hapus-gambar').hide();--}}
 
+            {{--            for (var i in response.data) {--}}
+            {{--                $('.foto_produk').eq(i).loadPreviewImage('{{ url("assets/images/produk") }}/' + response.data[i].foto_produk);--}}
+            {{--                $('.foto_produk').eq(i).hideBrowseButton();--}}
+            {{--                $('.gambar-produk-wrapper').eq(i).find('.btn-hapus-gambar').show();--}}
+            {{--                $('.gambar-produk-wrapper').eq(i).find('[name="foto_produk_lama[]"]').val(response.data[i].foto_produk);--}}
+            {{--            }--}}
+            {{--        } else {--}}
+            {{--            Swal.fire({--}}
+            {{--                icon: 'error',--}}
+            {{--                text: response.message--}}
+            {{--            });--}}
+            {{--        }--}}
+            {{--    })--}}
         });
 
 

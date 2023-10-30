@@ -42,6 +42,11 @@ class Tour extends Model
     public const AKTIF = 'I';
 
 
+    public function getDetail()
+    {
+        return $this->hasOne(TourDetail::class,'uuid_tour','uuid_tour');
+    }
+
     public function simpan($tour, $data)
     {
         DB::beginTransaction();

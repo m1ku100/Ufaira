@@ -24,5 +24,8 @@ class TourDetail extends Model
 
     protected $literal_name = 'Tour Detail';
 
-
+    public function getTour()
+    {
+        return $this->belongsTo(Tour::class,'uuid_tour','uuid_tour');
+    }
 }
