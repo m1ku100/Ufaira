@@ -37,6 +37,27 @@
                     </div>
                 </div>
 
+                <div class="card">
+                    <div class="card-body">
+                        <label class="card-title">Destinasi Tour <small>(Bila ada)</small></label>
+                        <br>
+                        <button type="button" class="btn btn-primary btn-sm add">Tambah Data</button>
+                        <button type="button" class="btn btn-danger btn-sm remove">Hapus Data</button>
+
+                        <div class="input-group mb-3 mt-4" id="div_destinasi_1">
+                            <input type="text" class="form-control" placeholder="Destinasi Wisata" name="destinasi[]" aria-label="" aria-describedby="basic-addon1">
+                            <div class="input-group-prepend">
+                                <button class="btn btn-outline-danger" type="button">Hapus</button>
+                            </div>
+                        </div>
+
+                        <div id="new_chq">
+
+                        </div>
+                        <input type="hidden" value="1" id="total_chq">
+                    </div>
+                </div>
+
 
                 <div class="card">
                     <div class="card-body">
@@ -53,22 +74,26 @@
                             <label for="foto_produk">Foto</label>
                             <div class="row">
                                 <div class="col-xl-3 col-6 gambar-produk-wrapper">
-                                    <x-input-image :base64="false" id="foto_produk_1" class="foto_produk" name="foto_produk[]"></x-input-image>
+                                    <x-input-image :base64="false" id="foto_produk_1" class="foto_produk"
+                                                   name="foto_produk[]"></x-input-image>
                                     <input type="hidden" name="foto_produk_lama[]" value="">
                                     <button class="btn btn-danger btn-sm btn-hapus-gambar" type="button">Hapus</button>
                                 </div>
                                 <div class="col-xl-3 col-6 gambar-produk-wrapper">
-                                    <x-input-image :base64="false" id="foto_produk_2" class="foto_produk" name="foto_produk[]"></x-input-image>
+                                    <x-input-image :base64="false" id="foto_produk_2" class="foto_produk"
+                                                   name="foto_produk[]"></x-input-image>
                                     <input type="hidden" name="foto_produk_lama[]" value="">
                                     <button class="btn btn-danger btn-sm btn-hapus-gambar" type="button">Hapus</button>
                                 </div>
                                 <div class="col-xl-3 col-6 gambar-produk-wrapper">
-                                    <x-input-image :base64="false" id="foto_produk_3" class="foto_produk" name="foto_produk[]"></x-input-image>
+                                    <x-input-image :base64="false" id="foto_produk_3" class="foto_produk"
+                                                   name="foto_produk[]"></x-input-image>
                                     <input type="hidden" name="foto_produk_lama[]" value="">
                                     <button class="btn btn-danger btn-sm btn-hapus-gambar" type="button">Hapus</button>
                                 </div>
                                 <div class="col-xl-3 col-6 gambar-produk-wrapper">
-                                    <x-input-image :base64="false" id="foto_produk_4" class="foto_produk" name="foto_produk[]"></x-input-image>
+                                    <x-input-image :base64="false" id="foto_produk_4" class="foto_produk"
+                                                   name="foto_produk[]"></x-input-image>
                                     <input type="hidden" name="foto_produk_lama[]" value="">
                                     <button class="btn btn-danger btn-sm btn-hapus-gambar" type="button">Hapus</button>
                                 </div>
@@ -92,6 +117,10 @@
     <script>
 
         $(function () {
+            $('.add').on('click', add);
+            $('.remove').on('click', remove);
+
+
             {{--$.post({--}}
             {{--    url :'{{ route('master.produk.get.produkgambar') }}',--}}
             {{--    data: {--}}
@@ -117,6 +146,32 @@
             {{--    })--}}
         });
 
+        function add() {
+            var new_chq_no = parseInt($('#total_chq').val()) + 1;
+            var new_input = '   <div class="input-group mb-3 mt-4" id="div_destinasi_'+ new_chq_no +'">' +
+                '    <input type="text" class="form-control" placeholder="Destinasi Wisata" name="destinasi[]" aria-label="" aria-describedby="basic-addon1">' +
+                '  <div class="input-group-prepend">' +
+                '  <button class="btn btn-outline-danger" onclick="removeDestinasi('+new_chq_no+')" type="button">Hapus</button>' +
+                ' </div>' +
+                ' </div>';
+
+            $('#new_chq').append(new_input);
+
+            $('#total_chq').val(new_chq_no);
+        }
+
+        function remove() {
+            var last_chq_no = $('#total_chq').val();
+
+            if (last_chq_no > 1) {
+                $('#new_' + last_chq_no).remove();
+                $('#total_chq').val(last_chq_no - 1);
+            }
+        }
+
+        function removeDestinasi(param) {
+            $('#div_destinasi_' + param).remove();
+        }
 
     </script>
 @endpush

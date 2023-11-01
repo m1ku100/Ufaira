@@ -11,6 +11,7 @@ class RoleSeeder extends Seeder
         Role::SUPERADMIN,
         Role::ADMIN,
         Role::EDITOR,
+        Role::PELANGGAN
     ];
 
     /**

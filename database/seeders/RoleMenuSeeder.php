@@ -24,7 +24,9 @@ class RoleMenuSeeder extends Seeder
         'Admin' => [
             'Admin - Riwayat Aktivitas'     => '*',
         ],
+        'Pelanggan' => [
 
+        ]
     ];
 
     /**
