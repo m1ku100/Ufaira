@@ -77,15 +77,16 @@
                     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                         <ul class="nav navbar-nav" id="responsive-menu">
                             <li class="dropdown  submenu active">
-                                <a href="{{url('/')}}" class="dropdown-toggle" >Home</a>
+                                <a href="{{url('/')}}" class="dropdown-toggle">Home</a>
                             </li>
                             <li class="submenu dropdown">
                                 <a href="{{route('bromo')}}" class="dropdown-toggle" data-toggle="dropdown"
                                    role="button" aria-haspopup="true" aria-expanded="false">Pejalanan <i
                                         class="fa fa-angle-down" aria-hidden="true"></i></a>
                                 <ul class="dropdown-menu">
-                                    <li><a href="{{route('bromo')}}">Gunung Bromo </a></li>
-                                    <li><a href="{{route('ijen')}}">Gunung Bromo - Ijen</a></li>
+                                    @foreach(\App\Models\Master\Tour::all() as $item)
+                                        <li><a href="{{route('trip',['slug'=>$item->slug_tour])}}">{{$item->nama_tour}} </a></li>
+                                    @endforeach
                                 </ul>
                             </li>
                             <li class="dropdown submenu">
@@ -101,13 +102,6 @@
                                 <a href="{{route('contact')}}" class="dropdown-toggle">Kontak</a>
                             </li>
 
-{{--                            <li class="dropdown">--}}
-{{--                                <a href="#search1" class="mt_search"><i class="fa fa-search"></i></a>--}}
-{{--                            </li>--}}
-{{--                            <li class="dropdown">--}}
-{{--                                <a href="cart.html" class="mt_cart"><i class="fa fa-shopping-cart"></i><span--}}
-{{--                                        class="number-cart">1</span></a>--}}
-{{--                            </li>--}}
                         </ul>
                     </div><!-- /.navbar-collapse -->
                     <div id="slicknav-mobile"></div>

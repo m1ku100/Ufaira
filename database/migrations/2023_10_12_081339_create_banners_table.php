@@ -17,7 +17,8 @@ class CreateBannersTable extends Migration
             $table->uuid('uuid_banner');
             $table->string('gambar_banner');
             $table->string('link_banner')->nullable();
-            $table->uuid('uuid_produk')->nullable();
+            $table->string('judul_banner')->nullable();
+            $table->string('sub_judul_banner')->nullable();
 
             $table->timestamps();
             $table->primary('uuid_banner');

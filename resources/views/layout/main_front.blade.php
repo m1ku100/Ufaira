@@ -122,8 +122,30 @@
             document.getElementById("form_login").submit(); // or $("#form_id")[0].submit();
 
         });
+
+
+
     })
+
+
+    function openWa(){
+        console.log('Test')
+        var link = `https://wa.me/{{pref('telp')}}`+ `?text=Hallo Selamat Siang`;
+
+        var isSafari = navigator.vendor && navigator.vendor.indexOf('Apple') > -1 &&
+            navigator.userAgent &&
+            navigator.userAgent.indexOf('CriOS') == -1 &&
+            navigator.userAgent.indexOf('FxiOS') == -1;
+
+        if(isSafari){
+            window.location.assign(link) // Safari
+        }else{
+            window.open(link)// Chrome
+        }
+    }
+
 </script>
+
 
 @stack('js')
 

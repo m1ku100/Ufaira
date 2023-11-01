@@ -8,65 +8,20 @@
         <div class="slider">
             <div class="swiper-container">
                 <div class="swiper-wrapper">
-                    <div class="swiper-slide">
-                        <div class="slide-inner">
-                            <div class="slide-image"
-                                 style="background-image:url({{asset('front/images/slider/bromo.jpg')}})"></div>
-                            <div class="swiper-content">
-                                <h1>Make you Free to <span>travel</span> with us</h1>
-                                <p class="mar-bottom-20">Foresee the pain and trouble that are bound to ensue and equal
-                                    fail
-                                    in their duty through weakness. </p>
-                                <a href="" class="biz-btn mar-left-10">Hubungi Kami</a>
+                    @foreach(\App\Models\Master\Banner::all() as $item)
+                        <div class="swiper-slide">
+                            <div class="slide-inner">
+                                <div class="slide-image"
+                                     style="background-image:url({{asset('assets/images/banner/'.$item->gambar_banner)}})"></div>
+                                <div class="swiper-content">
+                                    <h1>{{$item->judul_banner}}</h1>
+                                    <p class="mar-bottom-20">{{$item->sub_judul_banner}} </p>
+                                    <button onclick="openWa()" class="biz-btn mar-left-10">Hubungi Kami</button>
+                                </div>
+                                <div class="overlay"></div>
                             </div>
-                            <div class="overlay"></div>
                         </div>
-                    </div>
-                    <div class="swiper-slide">
-                        <div class="slide-inner">
-                            <div class="slide-image"
-                                 style="background-image:url({{asset('front/images/slider/bromo2.jpg')}})"></div>
-                            <div class="swiper-content">
-                                <h1><span>Sensation Ice Trip</span> Is Coming For Kids</h1>
-                                <p class="mar-bottom-20">Find awesome hotel, tour, car and activities in London, Foresee
-                                    the
-                                    pain and trouble</p>
-                                <a href="" class="biz-btn mar-left-10">Hubungi Kami</a>
-
-                            </div>
-                            <div class="overlay"></div>
-                        </div>
-                    </div>
-                    <div class="swiper-slide">
-                        <div class="slide-inner">
-                            <div class="slide-image"
-                                 style="background-image:url({{asset('front/images/slider/ijen.jpg')}})"></div>
-                            <div class="swiper-content">
-                                <h1>Your <span>Adventure</span> Wonderful Travel Calls Fast</h1>
-                                <p class="mar-bottom-20">Find awesome hotel, tour, car and activities in London to ensue
-                                    and
-                                    equal fail in their duty</p>
-                                <a href="" class="biz-btn mar-left-10">Hubungi Kami</a>
-
-                            </div>
-                            <div class="overlay"></div>
-                        </div>
-                    </div>
-                    <div class="swiper-slide">
-                        <div class="slide-inner">
-                            <div class="slide-image"
-                                 style="background-image:url({{asset('front/images/slider/ijen2.jpg')}})"></div>
-                            <div class="swiper-content">
-                                <h1>Your <span>Adventure</span> Wonderful Travel Calls Fast</h1>
-                                <p class="mar-bottom-20">Find awesome hotel, tour, car and activities in London to ensue
-                                    and
-                                    equal fail in their duty</p>
-                                <a href="" class="biz-btn mar-left-10">Hubungi Kami</a>
-
-                            </div>
-                            <div class="overlay"></div>
-                        </div>
-                    </div>
+                    @endforeach
                 </div>
                 <!-- Add Arrows -->
                 <div class="swiper-button-next"></div>
@@ -120,7 +75,7 @@
         <div class="container">
             <div class="cta-one_block display-flex space-between">
                 <h2 class="white mar-bottom-0">Mulai Perjalananmu Sekarang Juga</h2>
-                <a href="contact.html" class="biz-btn-white">Hubungi Kami</a>
+                <button onclick="openWa()" class="biz-btn-white">Hubungi Kami</button>
             </div>
         </div>
     </section>
@@ -133,45 +88,22 @@
                 <h2>Rental Mobil</h2>
             </div>
             <div class="row top-deal-slider">
-                <div class="col-md-4 slider-item">
-                    <div class="slider-image">
-                        <img src="{{asset('front/images/trending1.jpg')}}" alt="image">
-                    </div>
-                    <div class="slider-content">
-                        <h6 class="mar-bottom-10"><i class="fa fa-map-marker-alt"></i> Jawa Timur </h6>
-                        <h4><a href="#">Toyota Kijang Zenix</a></h4>
-                        <p>Automatic || Penumpang 1 - 5 Orang</p>
-                        <div class="deal-price">
-                            <p class="price">Rp 400.000 <span></span></p>
+                @foreach(\App\Models\Master\Rental::all() as $item)
+                    <div class="col-md-4 slider-item">
+                        <div class="slider-image">
+                            <img src="{{asset($item->foto)}}" alt="image">
+                        </div>
+                        <div class="slider-content">
+                            <h6 class="mar-bottom-10"><i class="fa fa-map-marker-alt"></i> Jawa Timur </h6>
+                            <h4><a href="{{route('rental')}}">{{$item->nama_kendaraan}}</a></h4>
+                            <p>{{$item->is_automatic ? 'Automatic' : 'Manual'}} || Penumpang 1 - {{$item->min_pax}}
+                                Orang</p>
+                            <div class="deal-price">
+                                <p class="price">Rp {{number_format($item->harga)}} <span></span></p>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="col-md-4 slider-item">
-                    <div class="slider-image">
-                        <img src="{{asset('front/images/trending1.jpg')}}" alt="image">
-                    </div>
-                    <div class="slider-content">
-                        <h6 class="mar-bottom-10"><i class="fa fa-map-marker-alt"></i> Jawa Timur </h6>
-                        <h4><a href="#">Toyota Hiace</a></h4>
-                        <p>Automatic || Penumpang 1 - 10 Orang</p>
-                        <div class="deal-price">
-                            <p class="price">Rp 1.200.000 <span></span></p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4 slider-item">
-                    <div class="slider-image">
-                        <img src="{{asset('front/images/trending1.jpg')}}" alt="image">
-                    </div>
-                    <div class="slider-content">
-                        <h6 class="mar-bottom-10"><i class="fa fa-map-marker-alt"></i> Jawa Timur </h6>
-                        <h4><a href="#">Suzuki APV Arena</a></h4>
-                        <p>Automatic || Penumpang 1 - 5 Orang</p>
-                        <div class="deal-price">
-                            <p class="price">Rp 800.000 <span></span></p>
-                        </div>
-                    </div>
-                </div>
+                @endforeach
             </div>
         </div>
     </section>
@@ -186,49 +118,23 @@
 
             </div>
             <div class="row mar-top-50">
-                <div class="col-md-4 col-sm-6 col-xs-12">
-                    <div class="gallery-item">
-                        <div class="gallery-image">
-                            <img src="{{asset('front/images/gallery/galery_1.jpg')}}" alt="image">
-                        </div>
-                        <div class="gallery-content">
-                            <ul>
-                                <li><a href="{{asset('front/images/gallery/galery_1.jpg')}}" data-lightbox="gallery"
-                                       data-title="Title"><i class="fa fa-eye"></i></a></li>
-                                <li><a href="#"><i class="fa fa-link"></i></a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4 col-sm-6 col-xs-12">
-                    <div class="gallery-item">
-                        <div class="gallery-image">
-                            <img src="{{asset('front/images/gallery/galery_2.jpg')}}" alt="image">
-                        </div>
-                        <div class="gallery-content">
-                            <ul>
-                                <li><a href="{{asset('front/images/gallery/galery_2.jpg')}}" data-lightbox="gallery"
-                                       data-title="Title"><i class="fa fa-eye"></i></a></li>
-                                <li><a href="#"><i class="fa fa-link"></i></a></li>
-                            </ul>
+                @foreach(\App\Models\Master\Gallery::query()->take(6)->get() as $item)
+                    <div class="col-md-4 col-sm-6 col-xs-12">
+                        <div class="gallery-item">
+                            <div class="gallery-image">
+                                <img src="{{asset('assets/images/gallery/'.$item->gambar_gallery)}}" alt="image">
+                            </div>
+                            <div class="gallery-content">
+                                <ul>
+                                    <li><a href="{{asset('assets/images/gallery/'.$item->gambar_gallery)}}"
+                                           data-lightbox="gallery"
+                                           data-title="Title"><i class="fa fa-eye"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-link"></i></a></li>
+                                </ul>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="col-md-4 col-sm-6 col-xs-12">
-                    <div class="gallery-item">
-                        <div class="gallery-image">
-                            <img src="{{asset('front/images/gallery/galery_3.jpg')}}" alt="image">
-                        </div>
-                        <div class="gallery-content">
-                            <ul>
-                                <li><a href="{{asset('front/images/gallery/galery_3.jpg')}}" data-lightbox="gallery"
-                                       data-title="Title"><i class="fa fa-eye"></i></a></li>
-                                <li><a href="#"><i class="fa fa-link"></i></a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-
+                @endforeach
             </div>
         </div>
     </section>

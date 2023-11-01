@@ -181,21 +181,5 @@
 @endsection
 
 @push('js')
-    <script type="text/javascript">
-        function openWa(){
 
-            var link = `https://wa.me/6282218538394`+ `?text=Hallo Selamat Siang`;
-
-            var isSafari = navigator.vendor && navigator.vendor.indexOf('Apple') > -1 &&
-                navigator.userAgent &&
-                navigator.userAgent.indexOf('CriOS') == -1 &&
-                navigator.userAgent.indexOf('FxiOS') == -1;
-
-            if(isSafari){
-                window.location.assign(link) // Safari
-            }else{
-                window.open(link)// Chrome
-            }
-        }
-    </script>
 @endpush

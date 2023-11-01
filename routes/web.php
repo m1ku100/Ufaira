@@ -17,6 +17,8 @@ use App\Http\Controllers\Page\FrontController;
 
 Route::get('/', [FrontController::class, 'index'])->name('index');
 
+Route::get('/trip/{slug}', [FrontController::class, 'trip'])->name('trip');
+
 Route::get('/bromo', [FrontController::class, 'tripBromo'])->name('bromo');
 
 Route::get('/bromo-ijen', [FrontController::class, 'tripIjen'])->name('ijen');

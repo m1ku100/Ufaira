@@ -10,7 +10,6 @@ class RoleSeeder extends Seeder
     protected $daftar_role = [
         Role::SUPERADMIN,
         Role::ADMIN,
-        Role::PELANGGAN,
         Role::EDITOR,
     ];
 
