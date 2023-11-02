@@ -84,7 +84,7 @@
                                    role="button" aria-haspopup="true" aria-expanded="false">Pejalanan <i
                                         class="fa fa-angle-down" aria-hidden="true"></i></a>
                                 <ul class="dropdown-menu">
-                                    @foreach(\App\Models\Master\Tour::all() as $item)
+                                    @foreach(\App\Models\Master\Tour::query()->where('status_tour','I')->get() as $item)
                                         <li><a href="{{route('trip',['slug'=>$item->slug_tour])}}">{{$item->nama_tour}} </a></li>
                                     @endforeach
                                 </ul>

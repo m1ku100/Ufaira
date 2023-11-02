@@ -28,25 +28,25 @@
                 <div id="content" class="col-md-8">
                     <div class="destination-content">
                         <h2 class="mar-bottom-5"><a href="{{route('bromo')}}">Trip {{$data->nama_tour}}</a></h2>
-                        <h3><strong class="color-red-3">RP. {{number_format($data->getDetail->harga)}}</strong> / Pax (Min {{$data->getDetail->min_pax}} Pax)</h3>
+                        <h3><strong class="color-red-3">RP. {{number_format($data->getDetail->harga)}}</strong> / Pax
+                            (Min {{$data->getDetail->min_pax}} Pax)</h3>
                     </div>
                     <div class="single-slider mar-bottom-30">
-                        <div class="slider-1 slider-store">
-                            <div class="detail-slider-item">
-                                <img src="{{asset('front/images/slider/bromo2.jpg')}}" alt="image">
-                            </div>
-                            <div class="detail-slider-item">
-                                <img src="{{asset('front/images/slider/bromo.jpg')}}" alt="image">
-                            </div>
-                        </div>
-                        <div class="slider-1 slider-thumbs">
-                            <div class="detail-slider-item">
-                                <img src="{{asset('front/images/slider/bromo2.jpg')}}" alt="image">
-                            </div>
-                            <div class="detail-slider-item">
-                                <img src="{{asset('front/images/slider/bromo.jpg')}}" alt="image">
+
+                            <div class="slider-1 slider-store">
+                                @foreach($data->getDetail->getGallery as $item)
+                                <div class="detail-slider-item">
+                                    <img src="{{asset('assets/images/gallery/'.$item->gambar_gallery)}}" alt="image">
+                                </div>
+                                @endforeach
                             </div>
 
+                        <div class="slider-1 slider-thumbs">
+                            @foreach($data->getDetail->getGallery as $item)
+                                <div class="detail-slider-item">
+                                    <img src="{{asset('assets/images/gallery/'.$item->gambar_gallery)}}" alt="image">
+                                </div>
+                            @endforeach
                         </div>
                     </div>
 
@@ -56,14 +56,16 @@
                             <!-- Destination Starts -->
                             <div class="itinerary mar-bottom-30">
                                 <h3>Destinasi Wisata</h3>
-                                @foreach(json_decode($data->getDetail->destinasi) as $key => $item)
-                                <div class="itinerary-item">
-                                    <button type="button" class="btn btn-info" data-target="#it1"><i
-                                            class="fa fa-angle-double-right" aria-hidden="true"></i></button>
-                                    <p class="mar-bottom-0"><span>{{$key + 1}}.  </span> {{$item}}</p>
+                                @if($data->getDetail->destinasi != null)
+                                    @foreach(json_decode($data->getDetail->destinasi) as $key => $item)
+                                        <div class="itinerary-item">
+                                            <button type="button" class="btn btn-info" data-target="#it1"><i
+                                                    class="fa fa-angle-double-right" aria-hidden="true"></i></button>
+                                            <p class="mar-bottom-0"><span>{{$key + 1}}.  </span> {{$item}}</p>
 
-                                </div>
-                                @endforeach
+                                        </div>
+                                    @endforeach
+                                @endif
                             </div>
 
 
@@ -76,19 +78,24 @@
                                     <div class="col-md-6 col-sm-6 col-xs-12">
                                         <h4>Include</h4>
                                         <ul>
-                                            @foreach(json_decode($data->getDetail->layanan_include) as $key => $item)
-                                            <li><i class="fa fa-check"></i> {{$item}}</li>
-                                            @endforeach
+                                            @if($data->getDetail->layanan_include != null)
+                                                @foreach(json_decode($data->getDetail->layanan_include) as $key => $item)
+                                                    <li><i class="fa fa-check"></i> {{$item}}</li>
+                                                @endforeach
+                                            @endif
 
                                         </ul>
                                     </div>
                                     <div class="col-md-6 col-sm-6 col-xs-12">
                                         <h4>Exclude</h4>
                                         <ul>
-                                            @foreach(json_decode($data->getDetail->layanan_exclude) as $key => $item)
-                                            <li><i class="fa fa-close" style="color: palevioletred"></i> {{$item}}
-                                            </li>
-                                            @endforeach
+                                            @if($data->getDetail->layanan_exclude != null)
+                                                @foreach(json_decode($data->getDetail->layanan_exclude) as $key => $item)
+                                                    <li><i class="fa fa-close"
+                                                           style="color: palevioletred"></i> {{$item}}
+                                                    </li>
+                                                @endforeach
+                                            @endif
 
                                         </ul>
                                     </div>
@@ -98,7 +105,7 @@
                         <div class="description mar-bottom-30">
                             <h3>Syarat & Ketentuan </h3>
                             <ul class="expect">
-                              {!! $data->getDetail->syarat !!}
+                                {!! $data->getDetail->syarat !!}
                             </ul>
                         </div>
                     </div>

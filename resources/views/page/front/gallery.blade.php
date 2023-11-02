@@ -28,53 +28,25 @@
                 <p></p>
             </div>
             <div class="row mar-top-50">
-                <div class="col-md-4 col-sm-6 col-xs-12">
-                    <div class="gallery-item">
-                        <div class="gallery-image">
-                            <img src="{{asset('front/images/gallery/galery_1.jpg')}}" alt="image">
-                        </div>
-                        <div class="gallery-content">
-                            <ul>
-                                <li><a href="{{asset('front/images/gallery/galery_1.jpg')}}" data-lightbox="gallery"
-                                       data-title="Title"><i class="fa fa-eye"></i></a></li>
-                                <li><a href="#"><i class="fa fa-link"></i></a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4 col-sm-6 col-xs-12">
-                    <div class="gallery-item">
-                        <div class="gallery-image">
-                            <img src="{{asset('front/images/gallery/galery_2.jpg')}}" alt="image">
-                        </div>
-                        <div class="gallery-content">
-                            <ul>
-                                <li><a href="{{asset('front/images/gallery/galery_2.jpg')}}" data-lightbox="gallery"
-                                       data-title="Title"><i class="fa fa-eye"></i></a></li>
-                                <li><a href="#"><i class="fa fa-link"></i></a></li>
-                            </ul>
+                @foreach(\App\Models\Master\Gallery::all() as $item)
+                    <div class="col-md-4 col-sm-6 col-xs-12">
+                        <div class="gallery-item">
+                            <div class="gallery-image">
+                                <img src="{{asset('assets/images/gallery/'.$item->gambar_gallery)}}" alt="image">
+                            </div>
+                            <div class="gallery-content">
+                                <ul>
+                                    <li><a href="{{asset('assets/images/gallery/'.$item->gambar_gallery)}}" data-lightbox="gallery"
+                                           data-title="Title"><i class="fa fa-eye"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-link"></i></a></li>
+                                </ul>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="col-md-4 col-sm-6 col-xs-12">
-                    <div class="gallery-item">
-                        <div class="gallery-image">
-                            <img src="{{asset('front/images/gallery/galery_3.jpg')}}" alt="image">
-                        </div>
-                        <div class="gallery-content">
-                            <ul>
-                                <li><a href="{{asset('front/images/gallery/galery_3.jpg')}}" data-lightbox="gallery"
-                                       data-title="Title"><i class="fa fa-eye"></i></a></li>
-                                <li><a href="#"><i class="fa fa-link"></i></a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-
+                @endforeach
             </div>
         </div>
     </section>
     <!-- top deal ends -->
-
 
 @endsection

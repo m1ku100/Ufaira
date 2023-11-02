@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\Master\Gallery;
 use App\Models\Master\Tour;
 use App\Models\Master\TourDetail;
 use Illuminate\Database\Seeder;
@@ -35,24 +36,27 @@ class TourSeeder extends Seeder
                     'Biaya makan terlepas dari paket',
                 ],
                 'min_pax' => '5',
-                'syarat' => ' <li><i class="fa fa-circle"></i>Harga di atas berlaku untuk WNI, terdapat charge untuk
+                'syarat' => ' <p>Harga di atas berlaku untuk WNI, terdapat charge untuk
                                     tiket dan service WNA sebesar Rp xxx.xxx ,- per orang (dapat dibayar langsung ke
                                     driver di hari-H)
-                                </li>
-                                <li><i class="fa fa-circle"></i> Kami menerima pembayaran penuh atau 30% di muka sebagai
+                                </p>
+                                <p> Kami menerima pembayaran penuh atau 30% di muka sebagai
                                     tanda jadi, pelunasan bisa dibayarkan cash ke tour leader / via transfer / QRIS
-                                </li>
-                                <li><i class="fa fa-circle"></i> Tanda jadi tidak dapat direfund bila terjadi pembatalan
+                                </p>
+                                <p>Tanda jadi tidak dapat direfund bila terjadi pembatalan
                                     dari pihak tamu, reschedule kadangkala memungkinkan untuk konfirmasi maksimal H-1
-                                </li>
-                                <li><i class="fa fa-circle"></i> Destinasi Wisata tidak baku dan dapat berubah karena
+                                </p>
+                                <p> Destinasi Wisata tidak baku dan dapat berubah karena
                                     kondisi di area Bromo (lalu lintas, cuaca) tanpa mengganggu agenda secara
                                     keseluruhan
-                                </li>'
-            ],
-            'foto_slider' => [
+                                </p>',
+                'foto_slider' => [
+                    'banner_1.jpg',
+                    'banner_2.jpg',
 
-            ]
+                ]
+            ],
+
         ],
         [
             'nama_tour' => 'Gunung Bromo Ijen',
@@ -81,24 +85,27 @@ class TourSeeder extends Seeder
                     'Biaya makan terlepas dari paket',
                 ],
                 'min_pax' => '5',
-                'syarat' => ' <li><i class="fa fa-circle"></i>Harga di atas berlaku untuk WNI, terdapat charge untuk
+                'syarat' => ' <p>Harga di atas berlaku untuk WNI, terdapat charge untuk
                                     tiket dan service WNA sebesar Rp xxx.xxx ,- per orang (dapat dibayar langsung ke
                                     driver di hari-H)
-                                </li>
-                                <li><i class="fa fa-circle"></i> Kami menerima pembayaran penuh atau 30% di muka sebagai
+                                </p>
+                                <p> Kami menerima pembayaran penuh atau 30% di muka sebagai
                                     tanda jadi, pelunasan bisa dibayarkan cash ke tour leader / via transfer / QRIS
-                                </li>
-                                <li><i class="fa fa-circle"></i> Tanda jadi tidak dapat direfund bila terjadi pembatalan
+                                </p>
+                                <p>Tanda jadi tidak dapat direfund bila terjadi pembatalan
                                     dari pihak tamu, reschedule kadangkala memungkinkan untuk konfirmasi maksimal H-1
-                                </li>
-                                <li><i class="fa fa-circle"></i> Destinasi Wisata tidak baku dan dapat berubah karena
+                                </p>
+                                <p> Destinasi Wisata tidak baku dan dapat berubah karena
                                     kondisi di area Bromo (lalu lintas, cuaca) tanpa mengganggu agenda secara
                                     keseluruhan
-                                </li>'
-            ],
-            'foto_slider' => [
+                                </p>',
+                'foto_slider' => [
+                    'banner_3.jpg',
+                    'banner_4.jpg',
 
-            ]
+                ]
+            ],
+
         ]
     ];
 
@@ -111,9 +118,9 @@ class TourSeeder extends Seeder
     {
         foreach ($this->daftar_tour as $key => $item) {
             $tour = Tour::query()->create([
-               'uuid_tour' => new_uuid(),
+                'uuid_tour' => new_uuid(),
                 'nama_tour' => $item['nama_tour'],
-                'slug_tour' =>  Str::slug($item['nama_tour'], '_')
+                'slug_tour' => Str::slug($item['nama_tour'], '_')
             ]);
 
             $detail = $item['detail'];
@@ -123,11 +130,21 @@ class TourSeeder extends Seeder
                 'uuid_tour' => $tour->uuid_tour,
                 'harga' => $detail['harga'],
                 'destinasi' => json_encode($detail['destinasi']),
-                'layanan_include'=> json_encode($detail['layanan_include']),
+                'layanan_include' => json_encode($detail['layanan_include']),
                 'layanan_exclude' => json_encode($detail['layanan_exclude']),
                 'min_pax' => $detail['min_pax'],
                 'syarat' => $detail['syarat'],
             ]);
+
+            foreach ($detail['foto_slider'] as $slider) {
+
+                $gallery = Gallery::query()->create([
+                    'uuid_gallery' => new_uuid(),
+                    'gambar_gallery' => $slider,
+                    'link_gallery' => '',
+                    'uuid_tour_detail' => $detail_tour->uuid_tour_detail,
+                ]);
+            }
         }
     }
 }

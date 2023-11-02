@@ -2,6 +2,7 @@
 
 namespace App\Contract\Master;
 
+use App\Http\Requests\Back\Master\Tour\SimpanTourDetailRequest;
 use App\Http\Requests\Back\Master\Tour\TourHapusPermanenRequest;
 use App\Http\Requests\Back\Master\Tour\TourHapusRequest;
 use App\Http\Requests\Back\Master\Tour\TourPulihkanRequest;
@@ -16,4 +17,6 @@ interface TourContract
     public function hapusPermanen(TourHapusPermanenRequest $request);
 
     public function pulihkan(TourPulihkanRequest $request);
+
+    public function simpanTourDetail(SimpanTourDetailRequest $request);
 }

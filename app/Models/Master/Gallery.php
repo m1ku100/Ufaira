@@ -26,6 +26,10 @@ class Gallery extends Model
 
     protected $object_name_field = 'uuid_gallery';
 
+    public function getDetailTour()
+    {
+        return $this->belongsTo(TourDetail::class,'uuid_tour_detail','uuid_tour_detail');
+    }
 
     public function simpan($data)
     {

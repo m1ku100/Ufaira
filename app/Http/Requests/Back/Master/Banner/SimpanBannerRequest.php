@@ -50,7 +50,8 @@ class SimpanBannerRequest extends BaseRequest
             'uuid_banner'   =>  $uuid,
             'gambar_banner' =>  basename($nama_file),
             'link_banner'   =>  $this->link_banner,
-            'uuid_produk'   =>   $this->uuid_produk,
+            'judul_banner'   =>   $this->judul_banner,
+            'sub_judul_banner'   =>   $this->sub_judul_banner,
         ];
 
         return $data;

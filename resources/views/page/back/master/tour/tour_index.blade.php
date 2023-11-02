@@ -10,7 +10,7 @@
 
 @push('header-tools')
     @can('create', \App\Models\Master\Tour::class)
-        <button class="btn btn-success btn-tambah" title="Tambah" onclick="tambah()">Tambah Pengguna</button>
+        <button class="btn btn-success btn-tambah" title="Tambah" onclick="tambah()">Tambah Tour</button>
     @endcan
 @endpush
 

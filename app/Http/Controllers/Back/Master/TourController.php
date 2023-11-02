@@ -4,10 +4,12 @@ namespace App\Http\Controllers\Back\Master;
 
 use App\Contract\Master\TourContract;
 use App\Http\Controllers\Controller;
+use App\Http\Requests\Back\Master\Tour\SimpanTourDetailRequest;
 use App\Http\Requests\Back\Master\Tour\TourHapusPermanenRequest;
 use App\Http\Requests\Back\Master\Tour\TourHapusRequest;
 use App\Http\Requests\Back\Master\Tour\TourPulihkanRequest;
 use App\Http\Requests\Back\Master\Tour\TourSimpanRequest;
+use App\Models\Master\Gallery;
 use App\Models\Master\Tour;
 use Illuminate\Http\Request;
 
@@ -85,6 +87,26 @@ class TourController extends Controller
 
         return view('page.back.master.tour.detail.detail_form',[
             'data' => $tour
+        ]);
+    }
+
+
+    public function simpanDetail(SimpanTourDetailRequest $request)
+    {
+        $response = $this->tourRepository->simpanTourDetail($request);
+
+        return $this->compileResponse($response);
+
+    }
+
+    public function getGambarGallery(Request $request)
+    {
+        $uuid_tour_detail	=	$request->uuid_tour_detail;
+        $getData		    =	Gallery::select('gambar_gallery')->where('uuid_tour_detail', $uuid_tour_detail)->get();
+
+        return response()->json([
+            'success' => true,
+            'data'	=>	$getData,
         ]);
     }
 }

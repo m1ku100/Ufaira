@@ -25,6 +25,10 @@ Route::group([
 
     Route::get('detail', [TourController::class, 'detailTour'])->name('detail');
 
+    Route::post('simpan/detail', [TourController::class, 'simpanDetail'])->name('simpan.detail');
+
+    Route::post('get-gallery', [TourController::class, 'getGambarGallery'])->name('get.gallery');
+
 
     Route::group([
         'prefix' => 'data',
@@ -32,7 +36,6 @@ Route::group([
     ], function () {
 
         Route::post('table', [TourController::class, 'tableData'])->name('table');
-
 
     });
 

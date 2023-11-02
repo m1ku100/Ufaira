@@ -27,9 +27,10 @@
             </div>
         @endcan
 
-            <div id="card-banner">
+        <div id="card-banner">
 
-            </div>
+        </div>
+
     </div>
 @endsection
 
@@ -97,9 +98,13 @@
                         html += `<div class="col-md-4 mb-3">
 							        <div class="card h-100">
 							            <img src="` + url + `" class="card-img-top">
+							               <div class="card-body">
+							            <h6> Judul : ` + value.judul_banner + `</h6> <br>
+							            <h6> Sub Judul : ` + value.sub_judul_banner + ` </h6>
+							                </div>
                                         @can('delete', \App\Models\Profile\Banner::class)
-                        <div class="card-body p-3">
-                            <button class="btn btn-danger btn-hapus" onclick="hapus('` + value.uuid_banner + `')">Hapus</button>
+                        <div class="card-footer">
+                            <button class="btn btn-danger btn-hapus" onclick="before_hapus('` + value.uuid_banner + `')">Hapus</button>
 							            </div>
                                         @endcan
                         </div>
@@ -115,6 +120,17 @@
 
     </script>
     <script>
+        function before_hapus(data) {
+
+            swal_confirm('Anda akan menghapus banner ini')
+                .then(function (response) {
+                    if (response.value) {
+                        hapus(data);
+                    }
+                });
+        }
+
+
         function hapus(data) {
             var nama = data;
             $.ajax({

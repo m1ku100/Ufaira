@@ -10,7 +10,7 @@
 
 @push('header-tools')
     @can('create', \App\Models\Master\Rental::class)
-        <button class="btn btn-success btn-tambah" title="Tambah" onclick="tambah()">Tambah Pengguna</button>
+        <button class="btn btn-success btn-tambah" title="Tambah" onclick="tambah()">Tambah Kendaraan</button>
     @endcan
 @endpush
 

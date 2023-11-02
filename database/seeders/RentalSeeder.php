@@ -11,22 +11,26 @@ class RentalSeeder extends Seeder
         [
             'nama_kendaraan' => 'apv',
             'harga'          => 800000,
-            'min_pax'          => '',
+            'min_pax'          => '4',
+            'is_automatic' => false,
         ],
         [
             'nama_kendaraan' => 'evalia',
             'harga'          => 500000,
-            'min_pax'          => '',
+            'min_pax'          => '5',
+            'is_automatic' => false,
         ],
         [
             'nama_kendaraan' => 'hiace',
             'harga'          => 1200000,
-            'min_pax'          => '',
+            'min_pax'          => '10',
+            'is_automatic' => false,
         ],
         [
             'nama_kendaraan' => 'zenix',
             'harga'          => 800000,
-            'min_pax'          => '',
+            'min_pax'          => '6',
+            'is_automatic' => true,
         ],
     ];
 
@@ -42,7 +46,7 @@ class RentalSeeder extends Seeder
                 'nama_kendaraan' => $role['nama_kendaraan'],
                 'harga' => $role['harga'],
                 'min_pax' => $role['min_pax'],
-                'is_automatic' => true,
+                'is_automatic' => $role['is_automatic'],
                 'is_include_supir' => false,
                 'is_include_bbm' => false,
                 'status_rental' => Rental::AKTIF,
