@@ -297,7 +297,7 @@
                 }
 
                 wrapper.find('[id^="image-preview"]').html('');
-                wrapper.find('[name="foto_produk_lama[]"]').val('');
+                wrapper.find('[name="gambar_gallery[]"]').val('');
                 wrapper.find('[id*="-chooser"]').show();
 
                 $(this).hide();

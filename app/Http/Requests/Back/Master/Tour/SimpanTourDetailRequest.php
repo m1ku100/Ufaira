@@ -63,8 +63,21 @@ class SimpanTourDetailRequest extends BaseRequest
 
     public function getDataGambar()
     {
+        $dataGambar = [];
+
         foreach ($this->gambar_gallery as $index => $value) {
             $nama_file = $value;
+
+            $data = [
+                'uuid_gallery' => new_uuid(),
+                'gambar_gallery' => $value,
+                'link_gallery' => '  ',
+                'uuid_tour_detail' => $this->uuid_tour_detail,
+            ];
+
+            if (!empty($nama_file) && !isset($this->foto_produk[$index])) {
+
+            }
 
             if (isset($this->foto_produk[$index])) {
 
@@ -78,10 +91,10 @@ class SimpanTourDetailRequest extends BaseRequest
                 );
 
                 $data = [
-                    'uuid_gallery'   =>  $uuid,
-                    'gambar_gallery' =>  basename($nama_file),
-                    'link_gallery'   =>  $this->link_gallery,
-                    'uuid_tour_detail'   =>   $this->uuid_tour_detail,
+                    'uuid_gallery' => $uuid,
+                    'gambar_gallery' => basename($nama_file),
+                    'link_gallery' => $this->link_gallery,
+                    'uuid_tour_detail' => $this->uuid_tour_detail,
                 ];
             }
 
