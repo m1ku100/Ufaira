@@ -68,8 +68,8 @@
     </form>
 </div>
 
-<div class="modal fade" id="login" role="dialog">
-    <div class="modal-dialog">
+<div class="modal fade" id="login" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" >
+    <div class="modal-dialog" role="document">
         <div class="login-content">
             <div class="login-title section-border">
                 <h3>Login</h3>

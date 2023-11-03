@@ -31,22 +31,22 @@
                                     </div>
 
                                     <div class="content-box mar-bottom-30">
-                                        <h3 class="white">Get In Touch</h3>
-                                        <p class="white">We must explain to you how all seds this mistakens idea off
-                                            denouncing pleasures and praising pain was born and I will give you a
-                                            completed accounts..</p>
-                                        <a href="#" class="biz-btn biz-btn1">Consultation</a>
+                                        <h3 class="white">Tentang Kami</h3>
+                                        <p class="white">Kami merupakan salah satu biro perjalanan dan transportasi yang ada di kota
+                                            Surabaya dan sudah beroperasi sejak 2013. Kami melayani segala aspek tentang paket
+                                            liburan mulai dari paket wisata, ziarah, persewaan mobil include driver, gathering
+                                            perusahaan, outbond, dan rafting. Kita juga sudah berkerja sama dengan berbagai pihak
+                                            hotel di sekitar Bromo, Ijen, Banyuwangi, Bali, Yogyakarta, Malang DLL</p>
                                     </div>
 
                                     <div class="contact-info">
                                         <h4 class="white">Contact Info</h4>
                                         <ul>
-                                            <li><i class="fa fa-map-marker-alt"></i> Travel 26, Old Brozon Mall, Newyrok
-                                                NY 10005
+                                            <li><i class="fa fa-map-marker-alt"></i> {{pref('alamat')}}
                                             </li>
-                                            <li><i class="fa fa-phone-alt"></i>555 626-0234</li>
-                                            <li><i class="fa fa-envelope-open"></i>support@travel.com</li>
-                                            <li><i class="fa fa-clock"></i> Week Days: 09.00 to 18.00 Sunday: Closed
+                                            <li><i class="fa fa-phone-alt"></i>{{pref('display_telp')}}</li>
+                                            <li><i class="fa fa-envelope-open"></i>{{pref('email')}}</li>
+                                            <li><i class="fa fa-clock"></i> Week Days: 09.00 to 18.00
                                             </li>
                                         </ul>
                                     </div>
@@ -100,6 +100,9 @@
                             </li>
                             <li class="dropdown submenu">
                                 <a href="{{route('contact')}}" class="dropdown-toggle">Kontak</a>
+                            </li>
+                            <li class="dropdown submenu">
+                                <a href="javascript:void()" class="dropdown-toggle" data-toggle="modal" data-target="#login">Login</a>
                             </li>
 
                         </ul>
