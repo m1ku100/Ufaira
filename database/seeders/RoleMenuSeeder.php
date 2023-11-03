@@ -23,6 +23,13 @@ class RoleMenuSeeder extends Seeder
         ],
         'Admin' => [
             'Admin - Riwayat Aktivitas'     => '*',
+            'Admin - Role'                  => '*',
+            'Admin - Tour'                => '*',
+            'Admin - Rental'                => '*',
+            'Admin - Pengguna'              => '*',
+            'Admin - Banner'                => '*',
+            'Admin - Gallery'                => '*',
+            'Admin - Preferensi'            => '*'
         ],
         'Pelanggan' => [
 
