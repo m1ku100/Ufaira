@@ -962,8 +962,8 @@ input#submit.biz-btn:hover {
 #back-to-top {
     position: fixed;
     z-index: 1000;
-    bottom: 20px;
-    right: 20px;
+    bottom: 100px;
+    right: 30px;
     display: none;
 }
 #back-to-top a {

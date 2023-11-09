@@ -38,7 +38,7 @@
                                 <ul>
                                     <li><a href="{{asset('assets/images/gallery/'.$item->gambar_gallery)}}" data-lightbox="gallery"
                                            data-title="Title"><i class="fa fa-eye"></i></a></li>
-                                    <li><a href="#"><i class="fa fa-link"></i></a></li>
+                                    <li><a href="javascript:void(0)"><i class="fa fa-link"></i></a></li>
                                 </ul>
                             </div>
                         </div>

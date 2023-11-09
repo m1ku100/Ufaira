@@ -18,9 +18,8 @@
                         <p>Email : {{pref('email')}}<br>
                             Alamat : {{pref('alamat')}}</p>
                         <ul class="social-links">
-                            <li><a href="#"><i class="fab fa-facebook" aria-hidden="true"></i></a></li>
-                            <li><a href="#"><i class="fab fa-twitter" aria-hidden="true"></i></a></li>
-                            <li><a href="#"><i class="fab fa-instagram" aria-hidden="true"></i></a></li>
+                            <li><a href="{{pref('facebook')}}"><i class="fab fa-facebook" aria-hidden="true"></i></a></li>
+                            <li><a href="{{pref('instagram')}}"><i class="fab fa-instagram" aria-hidden="true"></i></a></li>
 
                         </ul>
                     </div>

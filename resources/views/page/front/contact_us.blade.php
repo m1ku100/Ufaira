@@ -28,7 +28,7 @@
                     <div class="col-md-4 col-sm-12 col-xs-12">
                         <div class="info-item">
                             <div class="info-icon">
-                                <i class="fa fa-map-marker-alt"></i>
+                                <i class="fa fa-map-marker"></i>
                             </div>
                             <div class="info-content">
                                 <p>{{pref('alamat')}}</p>

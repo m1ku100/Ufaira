@@ -12,7 +12,7 @@
                             <i class="flaticon-call"></i>
                         </div>
                         <div class="why-us-content">
-                            <h3><a href="#">Support Customer Service</a></h3>
+                            <h3><a href="javascript:void(0)">Support Customer Service</a></h3>
                             <p class="mar-0">Team kami memberikan layanan terbaik selama 24/7 </p>
                         </div>
                     </div>
@@ -23,7 +23,7 @@
                             <i class="flaticon-building"></i>
                         </div>
                         <div class="why-us-content">
-                            <h3><a href="#">Penginapan Terpercaya</a></h3>
+                            <h3><a href="javascript:void(0)">Penginapan Terpercaya</a></h3>
                             <p class="mar-0">Penginapan dengan kualitas terbaik yang akan memanjakan
                                 disaat anda beristirahat</p>
                         </div>
@@ -35,7 +35,7 @@
                             <i class="flaticon-location-pin"></i>
                         </div>
                         <div class="why-us-content">
-                            <h3><a href="#">Paket Perjalanan</a></h3>
+                            <h3><a href="javascript:void(0)">Paket Perjalanan</a></h3>
                             <p class="mar-0">Paket perjalanan yang sangat terjangkau untuk semua kalangan</p>
                         </div>
                     </div>
@@ -48,7 +48,7 @@
                             <i class="flaticon-price"></i>
                         </div>
                         <div class="why-us-content">
-                            <h3><a href="#">Harga Bersahabat</a></h3>
+                            <h3><a href="javascript:void(0)">Harga Bersahabat</a></h3>
                             <p class="mar-0">Harga yang sangat ramah dikantong dengan layanan yang luar biasa</p>
                         </div>
                     </div>
@@ -59,7 +59,7 @@
                             <i class="flaticon-quality"></i>
                         </div>
                         <div class="why-us-content">
-                            <h3><a href="#">Pelayanan Terpercaya</a></h3>
+                            <h3><a href="javascript:void(0)">Pelayanan Terpercaya</a></h3>
                             <p class="mar-0">Bebas khawatir karena kami siap membantu jika Anda membutuhkan kami</p>
                         </div>
                     </div>
@@ -70,7 +70,7 @@
                             <i class="flaticon-global"></i>
                         </div>
                         <div class="why-us-content">
-                            <h3><a href="#">Cakupan Luas</a></h3>
+                            <h3><a href="javascript:void(0)">Cakupan Luas</a></h3>
                             <p class="mar-0">Lebih dari 20 Pilihan tempat wisata yang bisa anda kunjungi dan singgahi </p>
                         </div>
                     </div>

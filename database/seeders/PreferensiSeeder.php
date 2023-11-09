@@ -65,10 +65,11 @@ class PreferensiSeeder extends Seeder
                             'key_preferensi'    => 'koodinat',
                             'nama_preferensi'   => 'Koodinat Alamat',
                             'jenis_data'        => Preferensi::STRING,
-                            'nilai'             => '<iframe
-                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3956.6621169623368!2d112.72862947579449!3d-7.3917059727721375!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dd7e46403f22dff%3A0xdcb56ac94bb1b8cc!2sKlinik%20DNY%20Skincare%20Taman%20Paris!5e0!3m2!1sen!2sid!4v1694175846614!5m2!1sen!2sid"
-                                width="1200" height="535" style="border:0;" allowfullscreen="" loading="lazy"
-                                referrerpolicy="no-referrer-when-downgrade"></iframe>',
+                            'nilai'             => '
+                                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3957.8877195030573!2d112.71936699999999!3d-
+                                    7.253618!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dd7f94c7210e223%3A0xdb8b419dcc1a0ae5!2sJl.%20Asembagus%203%20No.
+                                    12%2C%20RT.003%2FRW.02%2C%20Tembok%20Dukuh%2C%20Kec.%20Bubutan%2C%20Surabaya%2C%20Jawa%20Timur%2060173!5e0!3m2!1sen!2sid!4v1699513101552!5m2!1sen!2sid"
+                                      width="1200" height="535" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>',
                             'jenis_input'       => Preferensi::TEXT
                         ],
 
@@ -123,7 +124,7 @@ class PreferensiSeeder extends Seeder
                         'key_preferensi'    => 'alamat',
                         'nama_preferensi'   => 'Alamat',
                         'jenis_data'        => Preferensi::STRING,
-                        'nilai'             => 'Jalan Bibis Karah nomor xx Kel. karah, Surabaya',
+                        'nilai'             => 'Jalan Asem Bagus gg 3 no 12 kel. Tembok Dukuh,Kec Bubutan Surabaya',
                         'jenis_input'       => Preferensi::TEXT
                     ],
 

@@ -3,7 +3,7 @@
         <div class="container">
             <div class="links links-left">
                 <ul>
-                    <li><a href="#"><i class="fa fa-phone-alt"></i>{{pref('display_telp')}}</a></li>
+                    <li><a href="#"><i class="fa fa-phone"></i>{{pref('display_telp')}}</a></li>
                     <li><a href="#"><i class="fa fa-envelope-open"></i> {{pref('email')}}</a></li>
                 </ul>
             </div>
@@ -11,12 +11,11 @@
                 <ul>
                     <li>
                         <ul class="social-links">
-                            <li><a href="#"><i class="fab fa-facebook" aria-hidden="true"></i></a></li>
-                            <li><a href="#"><i class="fab fa-twitter" aria-hidden="true"></i></a></li>
-                            <li><a href="#"><i class="fab fa-instagram" aria-hidden="true"></i></a></li>
+                            <li><a href="{{pref('facebook')}}"><i class="fab fa-facebook" aria-hidden="true"></i></a></li>
+                            <li><a href="{{pref('instagram')}}"><i class="fab fa-instagram" aria-hidden="true"></i></a></li>
                         </ul>
                     </li>
-                    <li><a href="#" data-toggle="modal" data-target="#login"><i class="fa fa-sign-in-alt"></i> Login</a>
+                    <li><a href="#" data-toggle="modal" data-target="#login"><i class="fa fa-sign-in"></i> Login</a>
                     </li>
 
                     <li>

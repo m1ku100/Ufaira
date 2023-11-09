@@ -120,8 +120,8 @@
 
                         <div class="sidebar-item sidebar-helpline">
                             <div class="sidebar-contact text-center">
-                                <i class=" fa fa-phone-alt"></i>
-                                <h3><span>Reservasi</span> Sekarang</h3>
+                                <img src="{{asset('front/images/wa.png')}}" alt="" style="width: 64px">
+                                <h3>Reservasi Sekarang</h3>
                                 <button onclick="openWa()" class="btn btn-primary" target="_blank">Hubungi Kami</button>
                                 <small>Senin - Minggu | 08:00 - 17:00</small>
                             </div>

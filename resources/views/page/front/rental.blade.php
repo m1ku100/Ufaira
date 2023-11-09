@@ -32,22 +32,22 @@
                             <div class="row">
                                 <div class="col-md-6 ">
                                     <div class="blog-image">
-                                        <a href="#"
+                                        <a href="javascript:void(0)"
                                            style="background-image: url('{{asset($item->foto)}}'); height: 170px;"></a>
                                     </div>
                                 </div>
                                 <div class="col-md-6 ">
                                     <div class="blog-content">
                                         <p class="price bold">Start <span>Rp {{number_format($item->harga)}}</span> / Hari</p>
-                                        <h3 class="blog-title"><a href="#">{{$item->nama_kendaraan}}</a></h3>
+                                        <h3 class="blog-title"><a href="javascript:void(0)">{{$item->nama_kendaraan}}</a></h3>
 
                                         <div class="cartrend-content display-flex space-between">
                                             <p class="mar-bottom-0"><i class="flaticon-location-pin"></i> Jawa Timur</p>
                                         </div>
                                         <div class="para-content">
-                                            <span class="mar-right-20"><a href="#" class="tag"><i
+                                            <span class="mar-right-20"><a href="javascript:void(0)" class="tag"><i
                                                         class="fa fa-user mar-right-5"></i> 1 - {{$item->min_pax}} Orang</a></span>
-                                            <span class="mar-right-20"><a href="#"><i
+                                            <span class="mar-right-20"><a href="javascript:void(0)"><i
                                                         class="fa fa-car mar-right-5"></i> {{$item->is_automatic ? 'Automatic' : 'Manual'}}</a></span>
                                         </div>
                                     </div>
@@ -63,8 +63,8 @@
                     <aside class="detail-sidebar sidebar-wrapper">
                         <div class="sidebar-item sidebar-helpline">
                             <div class="sidebar-contact text-center">
-                                <i class=" fa fa-phone-alt"></i>
-                                <h3><span>Reservasi</span> Sekarang</h3>
+                                <img src="{{asset('front/images/wa.png')}}" alt="" style="width: 64px">
+                                <h3>Reservasi Sekarang</h3>
                                 <button onclick="openWa()" class="btn btn-primary" target="_blank">Hubungi Kami</button>
                                 <small>Senin - Minggu | 08:00 - 17:00</small>
                             </div>

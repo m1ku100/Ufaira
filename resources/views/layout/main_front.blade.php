@@ -26,11 +26,30 @@
     <!--Font Awesome-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
-
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
     <style>
         /* Hilangkan Color palete Switcher */
         .hilang {
             display: none;
+        }
+
+        .float{
+            position:fixed;
+            width:60px;
+            height:60px;
+            bottom: 20px;
+            right: 20px;
+            background-color:#25d366;
+            color:#FFF;
+            border-radius:50px;
+            text-align:center;
+            font-size:30px;
+            box-shadow: 2px 2px 3px #999;
+            z-index:100;
+        }
+
+        .my-float{
+            margin-top:16px;
         }
     </style>
     @yield('meta')
@@ -54,7 +73,11 @@
 <!-- footer ends -->
 
 <!-- Back to top start -->
-<div id="back-to-top">
+<a href="" onclick="openWa()" class="float" target="_blank">
+    <i class="fa fa-whatsapp my-float"></i>
+</a>
+
+<div id="back-to-top" class="d-none">
     <a href="#"></a>
 </div>
 <!-- Back to top ends -->

@@ -68,6 +68,23 @@
     <!-- why us starts -->
     @include('layout.components.about_partial')
     <!-- why us ends -->
+    <section class="contact-main">
+        <div class="container">
+            <div class="section-title">
+                <h2>Temukan Kami</h2>
+            </div>
+            <div class="contact-map">
+                <div class="row">
+                    <div class="col-md-5">
+                        <div style="height: 535px; ">
+                            {!! pref('koodinat') !!}
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
 
 
     <!-- cta_one starts -->
@@ -129,7 +146,7 @@
                                     <li><a href="{{asset('assets/images/gallery/'.$item->gambar_gallery)}}"
                                            data-lightbox="gallery"
                                            data-title="Title"><i class="fa fa-eye"></i></a></li>
-                                    <li><a href="#"><i class="fa fa-link"></i></a></li>
+                                    <li><a href="javascript:void(0)"><i class="fa fa-link"></i></a></li>
                                 </ul>
                             </div>
                         </div>
