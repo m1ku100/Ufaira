@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Back\Master;
 
 use App\Contract\Master\BannerContract;
 use App\Http\Controllers\Controller;
+use App\Http\Requests\Back\Master\Banner\EditBannerRequest;
 use App\Http\Requests\Back\Master\Banner\HapusBannerRequest;
 use App\Http\Requests\Back\Master\Banner\SimpanBannerRequest;
 use App\Http\Requests\Back\Master\Banner\SimpanGalleryRequest;
@@ -30,6 +31,13 @@ class BannerController extends Controller
     public function simpan(SimpanBannerRequest $request)
     {
         $response = $this->banner_repository->simpan($request);
+
+        return $this->compileResponse($response);
+    }
+
+    public function edit(EditBannerRequest $request)
+    {
+        $response = $this->banner_repository->edit($request);
 
         return $this->compileResponse($response);
     }

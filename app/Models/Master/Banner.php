@@ -52,6 +52,24 @@ class Banner extends Model
         return true;
     }
 
+    public function edit($banner, $data)
+    {
+        DB::beginTransaction();
+
+        try {
+            $banner->update($data);
+
+        } catch (Exception $exception) {
+            DB::rollBack();
+
+            return $exception->getMessage();
+        }
+
+        DB::commit();
+
+        return true;
+    }
+
     /**
      * Menghapus banner
      *

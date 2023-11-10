@@ -3,6 +3,7 @@
 namespace App\Repositories\Back\Master;
 
 use App\Contract\Master\BannerContract;
+use App\Http\Requests\Back\Master\Banner\EditBannerRequest;
 use App\Http\Requests\Back\Master\Banner\HapusBannerRequest;
 use App\Http\Requests\Back\Master\Banner\SimpanBannerRequest;
 use App\Http\Requests\Back\Master\Banner\SimpanGalleryRequest;
@@ -23,6 +24,21 @@ class BannerRepository extends BaseRepository implements BannerContract
 
         if ($response !== true) {
             return $this->errorResponse('Gagal menyimpan Banner', $response);
+        }
+
+        return $this->successResponse();
+    }
+
+    public function edit(EditBannerRequest $request)
+    {
+        $data = $request->getData();
+
+        $model = app(Banner::class);
+
+        $response = $model->edit($request->banner, $data);
+
+        if ($response !== true) {
+            return $this->errorResponse('Gagal Edit Banner', $response);
         }
 
         return $this->successResponse();

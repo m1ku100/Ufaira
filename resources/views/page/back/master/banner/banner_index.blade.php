@@ -35,8 +35,15 @@
 @endsection
 
 @push('misc')
+    <x-modal id="form-modal" size="xl" title="Form Rental">
+        @include('page.back.master.banner.banner_form_edit')
 
+{{--        <x-slot name="footer">--}}
+{{--            <button onclick="submit_edit()" class="btn btn-success" id="btn-simpan">Simpan</button>--}}
+{{--        </x-slot>--}}
+    </x-modal>
 @endpush
+
 
 @push('js')
     <script>
@@ -80,8 +87,7 @@
             });
         });
 
-    </script>
-    <script>
+
         function getBanner() {
             $('#card-banner').empty();
             $.ajax({
@@ -104,7 +110,9 @@
 							                </div>
                                         @can('delete', \App\Models\Profile\Banner::class)
                         <div class="card-footer">
+
                             <button class="btn btn-danger btn-hapus" onclick="before_hapus('` + value.uuid_banner + `')">Hapus</button>
+                            <button class="btn btn-info" onclick="edit('` + url + `','` + value.uuid_banner + `','` + value.judul_banner + `','` + value.sub_judul_banner + `','` + value.gambar_banner + `')"> Edit </button>
 							            </div>
                                         @endcan
                         </div>
@@ -118,8 +126,63 @@
             });
         }
 
-    </script>
-    <script>
+        function edit(url, uuid, judul,sub_judul,image) {
+            console.log(judul)
+            $('#judul_banner_edit').val(judul);
+
+            $('#uuid_banner').val(uuid);
+
+            $('#sub_judul_banner_edit').val(sub_judul);
+
+            $('#foto_lama').val(image);
+
+            $('#gambar_banner_edit').loadPreviewImage(url);
+
+            $('#form-modal').modal('show');
+
+        }
+
+        function submit_edit(){
+            $('#form-edit-banner').submit();
+        }
+
+        $('#form-edit-banner').submit(function (e) {
+            e.preventDefault(); // avoid to execute the actual submit of the form.
+            var form = new FormData(this);
+
+            $.ajax({
+                type: "POST",
+                url: "{{ route('profile.banner.edit') }}",
+                data: form, // serializes the form's elements.
+                contentType: false,
+                processData: false,
+                beforeSend: function () {
+                    showLoader('Sedang menyimpan ...');
+                },
+                success: function (response) {
+                    if (response.success) {
+                        Swal.fire({
+                            icon: 'success',
+                            text: 'Berhasil menambah Banner'
+                        });
+
+                        $('#form-add-banner').trigger("reset");
+                        $('#gambar_banner').removePreviewImage();
+
+                        $('#form-modal').modal('hide');
+
+                        getBanner();
+                    } else {
+                        Swal.fire({
+                            icon: 'error',
+                            text: 'Gagal menambah Banner'
+                        });
+                    }
+                },
+            });
+        });
+
+
         function before_hapus(data) {
 
             swal_confirm('Anda akan menghapus banner ini')

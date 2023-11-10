@@ -13,6 +13,8 @@ Route::group([
 
     Route::post('simpan', [BannerController::class, 'simpan'])->name('simpan');
 
+    Route::post('edit', [BannerController::class, 'edit'])->name('edit');
+
     Route::post('hapus', [BannerController::class, 'hapus'])->name('hapus');
 
     Route::post('get', [BannerController::class, 'getData'])->name('get.data');
