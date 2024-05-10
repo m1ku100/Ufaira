@@ -27,9 +27,9 @@
             </div>
         @endcan
 
-            <div id="card-banner">
+        <div id="card-banner">
 
-            </div>
+        </div>
     </div>
 @endsection
 
@@ -75,7 +75,7 @@
                             text: 'Gagal menambah Banner'
                         });
                     }
-                },
+                }, error: ajaxFail
             });
         });
 
@@ -94,16 +94,29 @@
                     $.each(response, function (key, value) {
                         url = '{{ asset("assets/images/gallery") }}/' + value.gambar_gallery;
 
-                        html += `<div class="col-md-4 mb-3">
-							        <div class="card h-100">
+                        if (isImage(value.gambar_gallery)) {
+                            html += `<div class="col-md-4 mb-3">
+							        <div class="card h-100" style="align-items:center">
 							            <img src="` + url + `" class="card-img-top">
                                         @can('delete', \App\Models\Profile\Banner::class)
-                        <div class="card-body p-3">
-                            <button class="btn btn-danger btn-hapus" onclick="hapus('` + value.uuid_gallery + `')">Hapus</button>
+                            <div class="card-body p-3">
+                                <button class="btn btn-danger btn-hapus" onclick="hapus('` + value.uuid_gallery + `')">Hapus</button>
 							            </div>
                                         @endcan
-                        </div>
-                    </div>`;
+                            </div>
+                        </div>`;
+                        } else { // If Data is kind of video
+                            html += `<div class="col-md-4 mb-3" >
+							        <div class="card h-100" style="align-items:center">
+							        <video src="` + url + `" width="50%"  controls ></video>
+                                        @can('delete', \App\Models\Profile\Banner::class)
+                            <div class="card-body p-3">
+                                <button class="btn btn-danger btn-hapus" onclick="hapus('` + value.uuid_gallery + `')">Hapus</button>
+							            </div>
+                                        @endcan
+                            </div>
+                        </div>`;
+                        }
                     });
 
                     html += '</div>';

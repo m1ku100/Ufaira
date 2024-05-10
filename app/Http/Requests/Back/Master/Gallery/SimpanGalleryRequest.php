@@ -27,7 +27,14 @@ class SimpanGalleryRequest extends BaseRequest
     public function rules()
     {
         return [
-            'gambar_gallery'	=> 'required|image'
+            'gambar_gallery'	=> 'required'
+        ];
+    }
+
+    public function messages()
+    {
+        return [
+            'gambar_gallery.required' => 'Kode Pelanggan Wajib Dicantumkan',
         ];
     }
 

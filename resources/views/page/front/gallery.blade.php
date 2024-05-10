@@ -29,18 +29,31 @@
             </div>
             <div class="row mar-top-50">
                 @foreach(\App\Models\Master\Gallery::all() as $item)
+
                     <div class="col-md-4 col-sm-6 col-xs-12">
                         <div class="gallery-item">
                             <div class="gallery-image">
-                                <img src="{{asset('assets/images/gallery/'.$item->gambar_gallery)}}" alt="image">
+                                @if(explode(".",$item->gambar_gallery)[1] == 'mp4')
+                                    <video src="{{asset('assets/images/gallery/'.$item->gambar_gallery)}}" width="100%"
+                                           height="75%" controls></video>
+                                @else
+                                    <img src="{{asset('assets/images/gallery/'.$item->gambar_gallery)}}" alt="image">
+
+                                @endif
                             </div>
-                            <div class="gallery-content">
-                                <ul>
-                                    <li><a href="{{asset('assets/images/gallery/'.$item->gambar_gallery)}}" data-lightbox="gallery"
-                                           data-title="Title"><i class="fa fa-eye"></i></a></li>
-                                    <li><a href="javascript:void(0)"><i class="fa fa-link"></i></a></li>
-                                </ul>
-                            </div>
+                            @if(explode(".",$item->gambar_gallery)[1] == 'mp4')
+                            @else
+                                <div class="gallery-content">
+                                    <ul>
+                                        <li>
+                                            <a href="{{asset('assets/images/gallery/'.$item->gambar_gallery)}}"
+                                               data-lightbox="gallery"
+                                               data-title="Title"><i class="fa fa-eye"></i></a>
+                                        </li>
+                                        <li><a href="javascript:void(0)"><i class="fa fa-link"></i></a></li>
+                                    </ul>
+                                </div>
+                            @endif
                         </div>
                     </div>
                 @endforeach
