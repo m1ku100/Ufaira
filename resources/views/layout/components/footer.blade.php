@@ -28,9 +28,9 @@
                     <div class="footer-links">
                         <h3 class="white">Company</h3>
                         <ul>
-                            <li><a href="{{route('about', app()->getLocale())}}">Tentang Kami {{ __('common.menu_about') }}</a></li>
-                            <li><a href="{{route('gallery', app()->getLocale())}}">Galeri {{ __('common.menu_home.gallery') }}</a></li>
-                            <li><a href="{{route('contact', app()->getLocale())}}">Kontak Kami {{ __('common.menu_home.contact_us') }}</a></li>
+                            <li><a href="{{route('about', app()->getLocale())}}"> {{ __('common.menu_about') }}</a></li>
+                            <li><a href="{{route('gallery', app()->getLocale())}}">{{ __('common.menu_home.gallery') }}</a></li>
+                            <li><a href="{{route('contact', app()->getLocale())}}">{{ __('common.menu_home.contact_us') }}</a></li>
                         </ul>
                     </div>
                 </div>
