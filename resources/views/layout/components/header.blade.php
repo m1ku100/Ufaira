@@ -11,8 +11,14 @@
                 <ul>
                     <li>
                         <ul class="social-links">
-                            <li><a href="{{pref('facebook')}}"><i class="fab fa-facebook" aria-hidden="true"></i></a></li>
-                            <li><a href="{{pref('instagram')}}"><i class="fab fa-instagram" aria-hidden="true"></i></a></li>
+                            <li><a href="{{ route('switch.language') }}" class="btn-language">
+                                    {{ app()->getLocale() === 'id' ? 'EN' : 'ID' }}
+                                </a>
+                            </li>
+                            <li><a href="{{pref('facebook')}}"><i class="fab fa-facebook" aria-hidden="true"></i></a>
+                            </li>
+                            <li><a href="{{pref('instagram')}}"><i class="fab fa-instagram" aria-hidden="true"></i></a>
+                            </li>
                         </ul>
                     </li>
                     <li><a href="#" data-toggle="modal" data-target="#login"><i class="fa fa-sign-in"></i> Login</a>
@@ -30,12 +36,8 @@
                                     </div>
 
                                     <div class="content-box mar-bottom-30">
-                                        <h3 class="white">Tentang Kami</h3>
-                                        <p class="white">Kami merupakan salah satu biro perjalanan dan transportasi yang ada di kota
-                                            Surabaya dan sudah beroperasi sejak 2013. Kami melayani segala aspek tentang paket
-                                            liburan mulai dari paket wisata, ziarah, persewaan mobil include driver, gathering
-                                            perusahaan, outbond, dan rafting. Kita juga sudah berkerja sama dengan berbagai pihak
-                                            hotel di sekitar Bromo, Ijen, Banyuwangi, Bali, Yogyakarta, Malang DLL</p>
+                                        <h3 class="white">{{ __('common.menu_home.title_section') }}</h3>
+                                        <p class="white">{{ __('common.menu_home.tag_content') }}</p>
                                     </div>
 
                                     <div class="contact-info">
@@ -79,29 +81,54 @@
                                 <a href="{{url('/')}}" class="dropdown-toggle">Home</a>
                             </li>
                             <li class="submenu dropdown">
-                                <a href="{{route('bromo')}}" class="dropdown-toggle" data-toggle="dropdown"
-                                   role="button" aria-haspopup="true" aria-expanded="false">Pejalanan <i
+                                <a href="{{route('bromo', app()->getLocale())}}" class="dropdown-toggle"
+                                   data-toggle="dropdown"
+                                   role="button" aria-haspopup="true" aria-expanded="false">{{ __('common.menu_trip') }}
+                                    <i
                                         class="fa fa-angle-down" aria-hidden="true"></i></a>
                                 <ul class="dropdown-menu">
                                     @foreach(\App\Models\Master\Tour::query()->where('status_tour','I')->get() as $item)
-                                        <li><a href="{{route('trip',['slug'=>$item->slug_tour])}}">{{$item->nama_tour}} </a></li>
+                                        <li>
+                                            <a href="{{route('trip', ['slug'=>$item->slug_tour, 'locale' =>  app()->getLocale()])}}">{{$item->nama_tour}} </a>
+                                        </li>
                                     @endforeach
                                 </ul>
                             </li>
                             <li class="dropdown submenu">
-                                <a href="{{route('rental')}}" class="dropdown-toggle">Rental </a>
+                                <a href="{{route('rental', app()->getLocale())}}"
+                                   class="dropdown-toggle">{{ __('common.menu_rental') }} </a>
                             </li>
                             <li class="dropdown submenu">
-                                <a href="{{route('gallery')}}" class="dropdown-toggle">Galeri </a>
+                                <a href="{{route('gallery', app()->getLocale())}}"
+                                   class="dropdown-toggle">{{ __('common.menu_galleri') }}  </a>
                             </li>
                             <li class="dropdown submenu">
-                                <a href="{{route('about')}}" class="dropdown-toggle">Tentang Kami</a>
+                                <a href="{{route('about', app()->getLocale())}}"
+                                   class="dropdown-toggle">{{ __('common.menu_about') }}</a>
                             </li>
                             <li class="dropdown submenu">
-                                <a href="{{route('contact')}}" class="dropdown-toggle">Kontak</a>
+                                <a href="{{route('contact', app()->getLocale())}}"
+                                   class="dropdown-toggle">{{ __('common.menu_contact') }}</a>
                             </li>
+
+                            <li class="dropdown submenu" >
+                                <a href="{{ route('switch.language') }}"
+                                   class="lang-switch"
+                                   title="{{ app()->getLocale() === 'id' ? 'Switch to English' : 'Ganti ke Bahasa Indonesia' }}">
+
+                                    @if(app()->getLocale() === 'id')
+                                        <img src="{{ asset('front/flags/en.svg') }}" alt="English">
+                                        <span>EN</span>
+                                    @else
+                                        <img src="{{ asset('front/flags/id.svg') }}" alt="Indonesia">
+                                        <span>ID</span>
+                                    @endif
+                                </a>
                             <li class="dropdown submenu">
-                                <a href="javascript:void()" class="dropdown-toggle" data-toggle="modal" data-target="#login">Login</a>
+
+                            <li class="dropdown submenu">
+                                <a href="javascript:void()" class="dropdown-toggle" data-toggle="modal"
+                                   data-target="#login">Login</a>
                             </li>
 
                         </ul>

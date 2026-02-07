@@ -7,11 +7,11 @@
     <section class="breadcrumb-outer text-center">
         <div class="container">
             <div class="breadcrumb-content">
-                <h2 class="white">Kontak Kami</h2>
+                <h2 class="white">    {{ __('common.menu_contact') }}</h2>
                 <nav aria-label="breadcrumb">
                     <ul class="breadcrumb">
                         <li class="breadcrumb-item"><a href="{{url('/')}}">Home</a></li>
-                        <li class="breadcrumb-item active" aria-current="page">Kontak Kami</li>
+                        <li class="breadcrumb-item active" aria-current="page"> {{ __('common.menu_contact') }}</li>
                     </ul>
                 </nav>
             </div>
@@ -41,8 +41,8 @@
                                 <i class="fa fa-phone"></i>
                             </div>
                             <div class="info-content">
-                                <p>Telepon</p>
-                                <p>{{pref('display_telp')}}</p>
+                                <p>{{ __('common.menu_home.contact') }} </p>
+                                <p> (+62) 822 1853 8394</p>
                             </div>
                         </div>
                     </div>
@@ -52,7 +52,7 @@
                                 <i class="fa fa-envelope"></i>
                             </div>
                             <div class="info-content">
-                                <p>Email Kami</p>
+                                <p>Email </p>
                                 <p>{{pref('email')}}</p>
                             </div>
                         </div>

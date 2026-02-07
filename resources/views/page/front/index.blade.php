@@ -16,7 +16,7 @@
                                 <div class="swiper-content">
                                     <h1>{{$item->judul_banner}}</h1>
                                     <p class="mar-bottom-20">{{$item->sub_judul_banner}} </p>
-                                    <button onclick="openWa()" class="biz-btn mar-left-10">Hubungi Kami</button>
+                                    <button onclick="openWa()" class="biz-btn mar-left-10">{{__('common.menu_home.contact_us')}}</button>
                                 </div>
                                 <div class="overlay"></div>
                             </div>
@@ -39,14 +39,9 @@
                 <div class="col-md-7 col-sm-12">
                     <div class="why-us-about">
                         <div class="why-about-inner">
-                            <h3 class="mar-bottom-5 themecolor">Tentang UFAIRA</h3>
-                            <h2 class="bold">Kami Benar-Benar Berdedikasi Untuk Membuat Pengalaman Perjalanan Anda
-                                Semudah dan Menyenangkan Mungkin</h2>
-                            <p class="mar-0">Kami merupakan salah satu biro perjalanan dan transportasi yang ada di kota
-                                Surabaya dan sudah beroperasi sejak 2013. Kami melayani segala aspek tentang paket
-                                liburan mulai dari paket wisata, ziarah, persewaan mobil include driver, gathering
-                                perusahaan, outbond, dan rafting. Kita juga sudah berkerja sama dengan berbagai pihak
-                                hotel di sekitar Bromo, Ijen, Banyuwangi, Bali, Yogyakarta, Malang DLL.</p>
+                            <h3 class="mar-bottom-5 themecolor"> {{ __('common.menu_home.title_section') }}</h3>
+                            <h2 class="bold">{{ __('common.menu_home.tag_line') }}</h2>
+                            <p class="mar-0">{{ __('common.menu_home.tag_content') }}</p>
                         </div>
                     </div>
                 </div>
@@ -71,7 +66,7 @@
     <section class="contact-main">
         <div class="container">
             <div class="section-title">
-                <h2>Temukan Kami</h2>
+                <h2>{{ __('common.menu_home.find_us') }}</h2>
             </div>
             <div class="contact-map">
                 <div class="row">
@@ -91,8 +86,8 @@
     <section class="cta-one">
         <div class="container">
             <div class="cta-one_block display-flex space-between">
-                <h2 class="white mar-bottom-0">Mulai Perjalananmu Sekarang Juga</h2>
-                <button onclick="openWa()" class="biz-btn-white">Hubungi Kami</button>
+                <h2 class="white mar-bottom-0">{{ __('common.menu_home.trigger_call') }}</h2>
+                <button onclick="openWa()" class="biz-btn-white">{{ __('common.menu_home.contact_us') }}</button>
             </div>
         </div>
     </section>
@@ -112,9 +107,9 @@
                         </div>
                         <div class="slider-content">
                             <h6 class="mar-bottom-10"><i class="fa fa-map-marker-alt"></i> Jawa Timur </h6>
-                            <h4><a href="{{route('rental')}}">{{$item->nama_kendaraan}}</a></h4>
-                            <p>{{$item->is_automatic ? 'Automatic' : 'Manual'}} || Penumpang 1 - {{$item->min_pax}}
-                                Orang</p>
+                            <h4><a href="{{ route('rental', app()->getLocale()) }}">{{$item->nama_kendaraan}}</a></h4>
+                            <p>{{$item->is_automatic ? 'Automatic' : 'Manual'}} || {{ __('common.menu_home.passanger') }}  1 - {{$item->min_pax}}
+                                {{ __('common.menu_home.uom') }} </p>
                             <div class="deal-price">
                                 <p class="price">Rp {{number_format($item->harga)}} <span></span></p>
                             </div>
@@ -131,7 +126,7 @@
     <section class="top-deals">
         <div class="container">
             <div class="section-title">
-                <h2>Galeri Kami</h2>
+                <h2>{{ __('common.menu_home.gallery') }}</h2>
 
             </div>
             <div class="row mar-top-50">

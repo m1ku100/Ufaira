@@ -7,7 +7,7 @@
     <section class="breadcrumb-outer-rent    text-center">
         <div class="container">
             <div class="breadcrumb-content">
-                <h2 class="white">Rental Mobil</h2>
+                <h2 class="white">{{ __('common.menu_rental') }}</h2>
                 <nav aria-label="breadcrumb">
                     <ul class="breadcrumb">
                         <li class="breadcrumb-item"><a href="{{url('/')}}">Home</a></li>
@@ -38,7 +38,7 @@
                                 </div>
                                 <div class="col-md-6 ">
                                     <div class="blog-content">
-                                        <p class="price bold">Start <span>Rp {{number_format($item->harga)}}</span> / Hari</p>
+                                        <p class="price bold">Start <span>Rp {{number_format($item->harga)}}</span> /  {{ __('common.menu_home.day') }}</p>
                                         <h3 class="blog-title"><a href="javascript:void(0)">{{$item->nama_kendaraan}}</a></h3>
 
                                         <div class="cartrend-content display-flex space-between">
@@ -46,7 +46,7 @@
                                         </div>
                                         <div class="para-content">
                                             <span class="mar-right-20"><a href="javascript:void(0)" class="tag"><i
-                                                        class="fa fa-user mar-right-5"></i> 1 - {{$item->min_pax}} Orang</a></span>
+                                                        class="fa fa-user mar-right-5"></i> 1 - {{$item->min_pax}}   {{ __('common.menu_home.uom') }}</a></span>
                                             <span class="mar-right-20"><a href="javascript:void(0)"><i
                                                         class="fa fa-car mar-right-5"></i> {{$item->is_automatic ? 'Automatic' : 'Manual'}}</a></span>
                                         </div>
@@ -64,9 +64,9 @@
                         <div class="sidebar-item sidebar-helpline">
                             <div class="sidebar-contact text-center">
                                 <img src="{{asset('front/images/wa.png')}}" alt="" style="width: 64px">
-                                <h3>Reservasi Sekarang</h3>
-                                <button onclick="openWa()" class="btn btn-primary" target="_blank">Hubungi Kami</button>
-                                <small>Senin - Minggu | 08:00 - 17:00</small>
+                                <h3>{{ __('common.menu_home.trigger_call') }}</h3>
+                                <button onclick="openWa()" class="btn btn-primary" target="_blank"> {{ __('common.menu_home.contact_us') }}</button>
+                                <small> 08:00 - 17:00</small>
                             </div>
                         </div>
                     </aside>

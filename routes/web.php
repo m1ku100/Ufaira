@@ -14,19 +14,53 @@ use App\Http\Controllers\Page\FrontController;
 |
 */
 
+Route::get('/', function () {
+    return redirect('/' . config('app.locale'));
+});
 
-Route::get('/', [FrontController::class, 'index'])->name('index');
+Route::get('/switch-language', function () {
 
-Route::get('/trip/{slug}', [FrontController::class, 'trip'])->name('trip');
+    $current = app()->getLocale();
+    $target = $current === 'id' ? 'en' : 'id';
 
-Route::get('/bromo', [FrontController::class, 'tripBromo'])->name('bromo');
+    session(['locale' => $target]);
 
-Route::get('/bromo-ijen', [FrontController::class, 'tripIjen'])->name('ijen');
+    // redirect ke halaman sebelumnya tapi ganti locale
+    $previous = url()->previous();
+    $parsed = parse_url($previous);
 
-Route::get('/reantal', [FrontController::class, 'rental'])->name('rental');
+    $path = $parsed['path'] ?? '/';
+    $segments = explode('/', trim($path, '/'));
 
-Route::get('/galeri', [FrontController::class, 'gallery'])->name('gallery');
+    // replace locale segment
+    if (in_array($segments[0] ?? '', ['id', 'en'])) {
+        $segments[0] = $target;
+    } else {
+        array_unshift($segments, $target);
+    }
 
-Route::get('/tentang-kami', [FrontController::class, 'about'])->name('about');
+    return redirect('/' . implode('/', $segments));
+})->name('switch.language');
 
-Route::get('/kontak-kami', [FrontController::class, 'contact'])->name('contact');
+Route::group([
+    'prefix' => '{locale}',
+    'where' => ['locale' => 'id|en']
+], function () {
+
+    Route::get('/', [FrontController::class, 'index'])->name('index');
+
+    Route::get('/trip/{slug}', [FrontController::class, 'trip'])->name('trip');
+
+    Route::get('/bromo', [FrontController::class, 'tripBromo'])->name('bromo');
+
+    Route::get('/bromo-ijen', [FrontController::class, 'tripIjen'])->name('ijen');
+
+    Route::get('/rental', [FrontController::class, 'rental'])->name('rental');
+
+    Route::get('/galeri', [FrontController::class, 'gallery'])->name('gallery');
+
+    Route::get('/tentang-kami', [FrontController::class, 'about'])->name('about');
+
+    Route::get('/kontak-kami', [FrontController::class, 'contact'])->name('contact');
+
+});

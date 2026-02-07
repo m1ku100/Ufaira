@@ -51,6 +51,32 @@
         .my-float{
             margin-top:16px;
         }
+
+        .lang-switch {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 6px 10px;
+            border-radius: 20px;
+            border: 1px solid #e0e0e0;
+            background: #fff;
+            font-weight: 600;
+            font-size: 13px;
+            text-decoration: none;
+            color: #333;
+            transition: all 0.2s ease;
+        }
+
+        .lang-switch img {
+            width: 18px;
+            height: 18px;
+            border-radius: 50%;
+        }
+
+        .lang-switch:hover {
+            background: #f5f5f5;
+            transform: translateY(-1px);
+        }
     </style>
     @yield('meta')
 </head>

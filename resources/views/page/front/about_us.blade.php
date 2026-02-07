@@ -7,11 +7,11 @@
     <section class="breadcrumb-outer text-center">
         <div class="container">
             <div class="breadcrumb-content">
-                <h2 class="white">Tentang Kami</h2>
+                <h2 class="white">{{ __('common.menu_about') }}</h2>
                 <nav aria-label="breadcrumb">
                     <ul class="breadcrumb">
                         <li class="breadcrumb-item"><a href="{{url('/')}}">Home</a></li>
-                        <li class="breadcrumb-item active" aria-current="page">Tantang Kami</li>
+                        <li class="breadcrumb-item active" aria-current="page">{{ __('common.menu_about') }}</li>
                     </ul>
                 </nav>
             </div>
