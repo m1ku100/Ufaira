@@ -30,7 +30,7 @@
             <div class="row mar-top-50">
                 @foreach(\App\Models\Master\Gallery::all() as $item)
 
-                    <div class="col-md-4 col-sm-6 col-xs-12">
+                    <div class="col-md-4">
                         <div class="gallery-item">
                             <div class="gallery-image">
                                 @if(explode(".",$item->gambar_gallery)[1] == 'mp4')
@@ -58,6 +58,7 @@
                     </div>
                 @endforeach
             </div>
+
         </div>
     </section>
     <!-- top deal ends -->
