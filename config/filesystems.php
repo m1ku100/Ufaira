@@ -58,6 +58,7 @@ return [
         'public_path' => [
             'driver' => 'local',
             'root'   => public_path(),
+//            'root'   => realpath().'../',
         ],
 
         's3' => [
